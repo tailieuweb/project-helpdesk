@@ -1250,6 +1250,50 @@
             "install-path": "../foostart/package-filemanager"
         },
         {
+            "name": "foostart/package-helpdesk",
+            "version": "20220215",
+            "version_normalized": "20220215",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/foostart/package-helpdesk.git",
+                "reference": "478c1659016f8047a613c27c0bd4e80fdd8feabe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/foostart/package-helpdesk/zipball/478c1659016f8047a613c27c0bd4e80fdd8feabe",
+                "reference": "478c1659016f8047a613c27c0bd4e80fdd8feabe",
+                "shasum": ""
+            },
+            "time": "2022-02-15T15:27:34+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Foostart\\Helpdesk\\": "/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "FooStart",
+                    "email": "foostart.com@gmail.com",
+                    "homepage": "http://foostart.com"
+                }
+            ],
+            "description": "Manage helpdesk",
+            "keywords": [
+                "foostart"
+            ],
+            "support": {
+                "issues": "https://github.com/foostart/package-helpdesk/issues",
+                "source": "https://github.com/foostart/package-helpdesk/tree/20220215"
+            },
+            "install-path": "../foostart/package-helpdesk"
+        },
+        {
             "name": "foostart/package-pexcel",
             "version": "2022.02.09",
             "version_normalized": "2022.02.09.0",

@@ -182,8 +182,9 @@ return [
         Foostart\Filemanager\FilemanagerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Foostart\Pexcel\PexcelServiceProvider::class,
+        Foostart\Helpdesk\HelpdeskServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        
+
 
     ],
 

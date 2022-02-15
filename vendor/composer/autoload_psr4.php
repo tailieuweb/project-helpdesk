@@ -78,6 +78,7 @@ return array(
     'Foostart\\Slideshow\\' => array($vendorDir . '/foostart/package-slideshow'),
     'Foostart\\Post\\' => array($vendorDir . '/foostart/package-post'),
     'Foostart\\Pexcel\\' => array($vendorDir . '/foostart/package-pexcel'),
+    'Foostart\\Helpdesk\\' => array($vendorDir . '/foostart/package-helpdesk'),
     'Foostart\\Filemanager\\' => array($vendorDir . '/foostart/package-filemanager/src'),
     'Foostart\\Category\\' => array($vendorDir . '/foostart/package-category'),
     'Foostart\\Acl\\' => array($vendorDir . '/foostart/package-acl/app'),

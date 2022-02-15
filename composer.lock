@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e6377f81fb62c77b0172db0136558760",
+    "content-hash": "7b0a04ba6fadb96cd5fc4e3311015a07",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -797,6 +797,47 @@
                 "source": "https://github.com/foostart/package-filemanager/tree/2022.02.09"
             },
             "time": "2021-09-06T14:23:10+00:00"
+        },
+        {
+            "name": "foostart/package-helpdesk",
+            "version": "20220215",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/foostart/package-helpdesk.git",
+                "reference": "478c1659016f8047a613c27c0bd4e80fdd8feabe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/foostart/package-helpdesk/zipball/478c1659016f8047a613c27c0bd4e80fdd8feabe",
+                "reference": "478c1659016f8047a613c27c0bd4e80fdd8feabe",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Foostart\\Helpdesk\\": "/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "FooStart",
+                    "email": "foostart.com@gmail.com",
+                    "homepage": "http://foostart.com"
+                }
+            ],
+            "description": "Manage helpdesk",
+            "keywords": [
+                "foostart"
+            ],
+            "support": {
+                "issues": "https://github.com/foostart/package-helpdesk/issues",
+                "source": "https://github.com/foostart/package-helpdesk/tree/20220215"
+            },
+            "time": "2022-02-15T15:27:34+00:00"
         },
         {
             "name": "foostart/package-pexcel",

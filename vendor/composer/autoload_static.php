@@ -27,11 +27,11 @@ class ComposerStaticInit64db0dbbc9a0de52cf9d0f8524f7155e
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
+        '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
-        '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         '9cdd7b9056abc3081735233ba9dd9c7f' => __DIR__ . '/..' . '/facade/flare-client-php/src/helpers.php',
         'abdde736cf4d9a9bffd1fd9c9f31a8bd' => __DIR__ . '/..' . '/foostart/package-collectivehtml/src/helpers.php',
@@ -157,6 +157,7 @@ class ComposerStaticInit64db0dbbc9a0de52cf9d0f8524f7155e
             'Foostart\\Slideshow\\' => 19,
             'Foostart\\Post\\' => 14,
             'Foostart\\Pexcel\\' => 16,
+            'Foostart\\Helpdesk\\' => 18,
             'Foostart\\Filemanager\\' => 21,
             'Foostart\\Category\\' => 18,
             'Foostart\\Acl\\' => 13,
@@ -490,6 +491,10 @@ class ComposerStaticInit64db0dbbc9a0de52cf9d0f8524f7155e
         'Foostart\\Pexcel\\' => 
         array (
             0 => __DIR__ . '/..' . '/foostart/package-pexcel',
+        ),
+        'Foostart\\Helpdesk\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/foostart/package-helpdesk',
         ),
         'Foostart\\Filemanager\\' => 
         array (
