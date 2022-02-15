@@ -1,4 +1,4 @@
-<?php namespace Foostart\Helpdesks;
+<?php namespace Foostart\Helpdesk;
 
 use Illuminate\Support\ServiceProvider;
 use LaravelAcl\Authentication\Classes\Menu\SentryMenuFactory;

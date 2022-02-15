@@ -100,11 +100,13 @@ return [
             "permissions" => [$admin, "_permission-editor"]
         ],
 
-        //Pexcel
+
+
+        //Helpdesk
         [
-            "name" => "acl-admin.menu.pexcel",
-            "route" => "pexcel",
-            "link" => '/admin/pexcel',
+            "name" => "acl-admin.menu.helpdesk",
+            "route" => "helpdesk",
+            "link" => '/admin/helpdesk',
             "permissions" => [$admin, "_permission-editor"]
         ],
     ]
