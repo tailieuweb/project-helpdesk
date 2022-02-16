@@ -5,11 +5,11 @@ use Illuminate\Support\Facades\Schema;
 use Foostart\Category\Helpers\FoostartMigration;
 /** ten table
 */
-class CreateRequestTable extends FoostartMigration
+class CreateEmployeeTable extends FoostartMigration
 {
     public function __construct() {
-        $this->table = 'request';
-        $this->prefix_column = 'request_';
+        $this->table = 'Employee';
+        $this->prefix_column = 'employee_';
     }
     /**
      * Run the migrations.
@@ -21,19 +21,20 @@ class CreateRequestTable extends FoostartMigration
         Schema::dropIfExists($this->table);
         Schema::create($this->table, function (Blueprint $table) {
 
-            $table->increments($this->prefix_column . 'id')->comment('Primary key');
+            $table->increments($this->prefix_column . 'EmployeeID')->comment('Primary key');
 
             // Relation
-            $table->integer('category_id')->comment('Category ID');
+          //  $table->integer('category_id')->comment('Category ID');
 
             // Other attributes
-            $table->string($this->prefix_column . 'name', 255)->comment('Helpdesk name');
-            $table->string($this->prefix_column . 'slug', 255)->comment('Helpdesk slug');
-            $table->string($this->prefix_column . 'start_date', 255)->nullable()->comment('Helpdesk start date');
-            $table->string($this->prefix_column . 'end_date', 255)->nullable()->comment('Helpdesk end date');
+            $table->integer($this->prefix_column . 'Level', 255)->comment('Level');
+            $table->string($this->prefix_column . 'Name', 255)->comment('Employee name');
+           // $table->string($this->prefix_column . 'slug', 255)->comment('Helpdesk slug');
+         //   $table->string($this->prefix_column . 'start_date', 255)->nullable()->comment('Helpdesk start date');
+        //    $table->string($this->prefix_column . 'end_date', 255)->nullable()->comment('Helpdesk end date');
 
-            $table->string($this->prefix_column . 'image', 255)->nullable()->comment('Helpdesk image');
-            $table->text($this->prefix_column . 'description')->nullable()->comment('Helpdesk description');
+         //   $table->string($this->prefix_column . 'image', 255)->nullable()->comment('Helpdesk image');
+       //     $table->text($this->prefix_column . 'description')->nullable()->comment('Helpdesk description');
 
             //Set common columns
             $this->setCommonColumns($table);

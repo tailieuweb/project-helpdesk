@@ -3,7 +3,8 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Foostart\Category\Helpers\FoostartMigration;
-
+/** ten table
+*/
 class CreateRequestTable extends FoostartMigration
 {
     public function __construct() {
