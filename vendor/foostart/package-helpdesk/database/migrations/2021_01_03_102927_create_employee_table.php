@@ -24,7 +24,7 @@ class CreateEmployeeTable extends FoostartMigration
             $table->increments($this->prefix_column . 'id')->comment('Primary key');
 
             // Relation
-            $table->integer('employee_id')->comment(' employee_id');
+          //  $table->integer('employee_id')->comment(' employee_id');
 
             // Other attributes
             $table->string($this->prefix_column . 'level', 255)->nullable()->comment('Level');
