@@ -5,11 +5,11 @@ use Illuminate\Support\Facades\Schema;
 use Foostart\Category\Helpers\FoostartMigration;
 /** ten table
 */
-class CreateStudentTable extends FoostartMigration
+class CreateGroupTable extends FoostartMigration
 {
     public function __construct() {
-        $this->table = 'request';
-        $this->prefix_column = 'request_';
+        $this->table = 'group';
+        $this->prefix_column = 'group_';
     }
     /**
      * Run the migrations.
@@ -27,13 +27,9 @@ class CreateStudentTable extends FoostartMigration
          //   $table->integer('class_id')->comment('Class ID');
 
             // Other attributes
-            $table->string($this->prefix_column . 'name', 255)->comment('Student name');
-            $table->string($this->prefix_column . 'address', 255)->comment('Address student');
-            $table->string($this->prefix_column . 'dob_date', 255)->nullable()->comment('Student birthday');
-            $table->string($this->prefix_column . 'enroll_date', 255)->nullable()->comment('Student Enroll date');
+            $table->string($this->prefix_column . 'name', 255)->comment('Group name');
+            $table->string($this->prefix_column . 'level', 255)->comment('Level');
 
-            $table->string($this->prefix_column . 'image', 255)->nullable()->comment('Student image');
-            $table->text($this->prefix_column . 'description')->nullable()->comment('Student description');
 
             //Set common columns
             $this->setCommonColumns($table);

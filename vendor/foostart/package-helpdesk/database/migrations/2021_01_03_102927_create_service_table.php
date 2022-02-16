@@ -4,11 +4,11 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Foostart\Category\Helpers\FoostartMigration;
 
-class CreateHelpdeskTable extends FoostartMigration
+class CreateServiceTable extends FoostartMigration
 {
     public function __construct() {
-        $this->table = 'helpdesk';
-        $this->prefix_column = 'helpdesk_';
+        $this->table = 'service';
+        $this->prefix_column = 'service_';
     }
     /**
      * Run the migrations.
@@ -23,16 +23,16 @@ class CreateHelpdeskTable extends FoostartMigration
             $table->increments($this->prefix_column . 'id')->comment('Primary key');
 
             // Relation
-            $table->integer('category_id')->comment('Category ID');
+            $table->integer('service_id')->comment('Service ID');
 
             // Other attributes
-            $table->string($this->prefix_column . 'name', 255)->comment('Helpdesk name');
-            $table->string($this->prefix_column . 'slug', 255)->comment('Helpdesk slug');
-            $table->string($this->prefix_column . 'start_date', 255)->nullable()->comment('Helpdesk start date');
-            $table->string($this->prefix_column . 'end_date', 255)->nullable()->comment('Helpdesk end date');
+            $table->string($this->prefix_column . 'name', 255)->comment('Service name');
+            $table->string($this->prefix_column . 'slug', 255)->comment('Service slug');
+            $table->string($this->prefix_column . 'start_date', 255)->nullable()->comment('Service start date');
+            $table->string($this->prefix_column . 'end_date', 255)->nullable()->comment('Service end date');
 
-            $table->string($this->prefix_column . 'image', 255)->nullable()->comment('Helpdesk image');
-            $table->text($this->prefix_column . 'description')->nullable()->comment('Helpdesk description');
+            $table->string($this->prefix_column . 'image', 255)->nullable()->comment('Service image');
+            $table->text($this->prefix_column . 'description')->nullable()->comment('Service description');
 
             //Set common columns
             $this->setCommonColumns($table);

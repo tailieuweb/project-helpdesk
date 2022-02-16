@@ -8,8 +8,8 @@ use Foostart\Category\Helpers\FoostartMigration;
 class CreateStudentTable extends FoostartMigration
 {
     public function __construct() {
-        $this->table = 'student';
-        $this->prefix_column = 'student_';
+        $this->table = 'request';
+        $this->prefix_column = 'request_';
     }
     /**
      * Run the migrations.
