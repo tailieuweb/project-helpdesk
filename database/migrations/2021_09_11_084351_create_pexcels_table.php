@@ -1,14 +1,13 @@
 <?php
-
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Foostart\Category\Helpers\FoostartMigration;
 
-class CreateServiceTable extends FoostartMigration
+class CreatePexcelsTable extends FoostartMigration
 {
     public function __construct() {
-        $this->table = 'service';
-        $this->prefix_column = 'service_';
+        $this->table = 'pexcels';
+        $this->prefix_column = 'pexcel_';
     }
     /**
      * Run the migrations.
@@ -23,16 +22,14 @@ class CreateServiceTable extends FoostartMigration
             $table->increments($this->prefix_column . 'id')->comment('Primary key');
 
             // Relation
-
+            $table->integer('category_id')->comment('Category ID');
 
             // Other attributes
-            $table->string($this->prefix_column . 'name', 255)->comment('Service name');
-            $table->string($this->prefix_column . 'slug', 255)->comment('Service slug');
-            $table->string($this->prefix_column . 'start_date', 255)->nullable()->comment('Service start date');
-            $table->string($this->prefix_column . 'end_date', 255)->nullable()->comment('Service end date');
-
-            $table->string($this->prefix_column . 'image', 255)->nullable()->comment('Service image');
-            $table->text($this->prefix_column . 'description')->nullable()->comment('Service description');
+            $table->string($this->prefix_column . 'name', 255)->comment('Name');
+            $table->string($this->prefix_column . 'range_data', 25)->nullable()->comment('Range data');
+            $table->text($this->prefix_column . 'value')->nullable()->comment('Json value');
+            $table->string($this->prefix_column . 'file_path', 255)->comment('File path');
+            $table->text($this->prefix_column . 'description')->nullable()->comment('Description');
 
             //Set common columns
             $this->setCommonColumns($table);

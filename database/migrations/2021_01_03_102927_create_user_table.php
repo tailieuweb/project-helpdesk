@@ -3,12 +3,13 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Foostart\Category\Helpers\FoostartMigration;
-
-class CreateServiceTable extends FoostartMigration
+/** ten table
+*/
+class CreateGroupTable extends FoostartMigration
 {
     public function __construct() {
-        $this->table = 'service';
-        $this->prefix_column = 'service_';
+        $this->table = 'group';
+        $this->prefix_column = 'group_';
     }
     /**
      * Run the migrations.
@@ -23,16 +24,12 @@ class CreateServiceTable extends FoostartMigration
             $table->increments($this->prefix_column . 'id')->comment('Primary key');
 
             // Relation
-
+         //   $table->integer('class_id')->comment('Class ID');
 
             // Other attributes
-            $table->string($this->prefix_column . 'name', 255)->comment('Service name');
-            $table->string($this->prefix_column . 'slug', 255)->comment('Service slug');
-            $table->string($this->prefix_column . 'start_date', 255)->nullable()->comment('Service start date');
-            $table->string($this->prefix_column . 'end_date', 255)->nullable()->comment('Service end date');
+            $table->string($this->prefix_column . 'name', 255)->comment('Group name');
+            $table->string($this->prefix_column . 'level', 255)->comment('Level');
 
-            $table->string($this->prefix_column . 'image', 255)->nullable()->comment('Service image');
-            $table->text($this->prefix_column . 'description')->nullable()->comment('Service description');
 
             //Set common columns
             $this->setCommonColumns($table);
