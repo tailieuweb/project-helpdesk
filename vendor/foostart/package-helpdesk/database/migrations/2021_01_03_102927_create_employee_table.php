@@ -24,11 +24,11 @@ class CreateEmployeeTable extends FoostartMigration
             $table->increments($this->prefix_column . 'id')->comment('Primary key');
 
             // Relation
-            $table->integer('employee_id')->comment(' Employee_id');
+            $table->integer('employee_id')->comment(' employee_id');
 
             // Other attributes
-            $table->integer($this->prefix_column . 'level', 255)->comment('Level');
-            $table->string($this->prefix_column . 'name', 255)->comment('Employee name');
+            $table->string($this->prefix_column . 'level', 255)->nullable()->comment('Level');
+            $table->string($this->prefix_column . 'name', 255)->nullable()->comment('Employee name');
            // $table->string($this->prefix_column . 'slug', 255)->comment('Helpdesk slug');
          //   $table->string($this->prefix_column . 'start_date', 255)->nullable()->comment('Helpdesk start date');
         //    $table->string($this->prefix_column . 'end_date', 255)->nullable()->comment('Helpdesk end date');
