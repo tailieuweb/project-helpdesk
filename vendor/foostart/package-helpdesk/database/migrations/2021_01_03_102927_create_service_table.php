@@ -23,7 +23,7 @@ class CreateServiceTable extends FoostartMigration
             $table->increments($this->prefix_column . 'id')->comment('Primary key');
 
             // Relation
-
+            $table->integer('request_id')->comment('Request ID');
 
             // Other attributes
             $table->string($this->prefix_column . 'name', 255)->comment('Service name');

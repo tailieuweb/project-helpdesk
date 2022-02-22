@@ -5,11 +5,11 @@ use Illuminate\Support\Facades\Schema;
 use Foostart\Category\Helpers\FoostartMigration;
 /** ten table
 */
-class CreateStudentsTable extends FoostartMigration
+class CreateClassStudentsTable extends FoostartMigration
 {
     public function __construct() {
-        $this->table = 'students';
-        $this->prefix_column = 'student_';
+        $this->table = 'ClassStudents';
+        $this->prefix_column = 'ClassStudents_';
     }
     /**
      * Run the migrations.
@@ -28,9 +28,9 @@ class CreateStudentsTable extends FoostartMigration
 
             // Other attributes
             $table->string($this->prefix_column . 'name', 255)->comment('Student name');
+            $table->string($this->prefix_column . 'teacher', 255)->comment('Teacher name');
+            $table->string($this->prefix_column . 'class', 255)->comment('class name');
             $table->string($this->prefix_column . 'address', 255)->comment('Address student');
-            $table->string($this->prefix_column . 'dob_date', 255)->nullable()->comment('Student birthday');
-            $table->string($this->prefix_column . 'enroll_date', 255)->nullable()->comment('Student Enroll date');
 
             $table->string($this->prefix_column . 'image', 255)->nullable()->comment('Student image');
             $table->text($this->prefix_column . 'description')->nullable()->comment('Student description');

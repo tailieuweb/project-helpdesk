@@ -4,11 +4,11 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Foostart\Category\Helpers\FoostartMigration;
 
-class CreateServiceTable extends FoostartMigration
+class CreateCategoryTable extends FoostartMigration
 {
     public function __construct() {
-        $this->table = 'service';
-        $this->prefix_column = 'service_';
+        $this->table = 'category';
+        $this->prefix_column = 'category_';
     }
     /**
      * Run the migrations.
@@ -26,13 +26,8 @@ class CreateServiceTable extends FoostartMigration
 
 
             // Other attributes
-            $table->string($this->prefix_column . 'name', 255)->comment('Service name');
-            $table->string($this->prefix_column . 'slug', 255)->comment('Service slug');
-            $table->string($this->prefix_column . 'start_date', 255)->nullable()->comment('Service start date');
-            $table->string($this->prefix_column . 'end_date', 255)->nullable()->comment('Service end date');
+            $table->string($this->prefix_column . 'name', 255)->comment('Category name');
 
-            $table->string($this->prefix_column . 'image', 255)->nullable()->comment('Service image');
-            $table->text($this->prefix_column . 'description')->nullable()->comment('Service description');
 
             //Set common columns
             $this->setCommonColumns($table);
