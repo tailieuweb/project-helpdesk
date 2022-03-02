@@ -93,3 +93,139 @@ View::composer([
         $view->with('plang_admin', $plang_admin);
         $view->with('plang_front', $plang_front);
 });
+
+View::composer([
+    // Helpdesk
+    'package-helpdesk::teacher.course-edit',
+    'package-helpdesk::teacher.course-form',
+    'package-helpdesk::teacher.course-items',
+    'package-helpdesk::teacher.course-item',
+    'package-helpdesk::teacher.course-search',
+    'package-helpdesk::teacher.course-view',
+
+], function ($view) {
+
+    //Order by params
+    $params = Request::all();
+
+    /**
+     * $plang-admin
+     * $plang-front
+     */
+    $plang_admin = 'helpdesk-admin';
+    $plang_front = 'helpdesk-front';
+
+    $fooCategory = new FooCategory();
+    $key = $fooCategory->getContextKeyByRef('admin/helpdesk');
+
+    /**
+     * $sidebar_items
+     */
+    $sidebar_items = [
+        trans('helpdesk-admin.sidebar.add') => [
+            'url' => URL::route('helpdesk.edit', []),
+            'icon' => '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'
+        ],
+        trans('helpdesk-admin.sidebar.list_helpdesk') => [
+            "url" => URL::route('helpdesk', []),
+            'icon' => '<i class="fa fa-list-ul" aria-hidden="true"></i>'
+        ],
+    ];
+
+    /**
+     * $sorting
+     * $order_by
+     */
+    $orders = [
+        '' => trans($plang_admin.'.form.no-selected'),
+        'id' => trans($plang_admin.'.fields.helpdesk_id'),
+        'helpdesk_name' => trans($plang_admin.'.fields.helpdesk_name'),
+        'updated_at' => trans($plang_admin.'.fields.updated_at'),
+        'status' => trans($plang_admin.'.fields.status'),
+    ];
+    $sortTable = new SortTable();
+    $sortTable->setOrders($orders);
+    $sorting = $sortTable->linkOrders();
+
+    //Order by
+    $order_by = [
+        'asc' => trans('category-admin.order.by-asc'),
+        'desc' => trans('category-admin.order.by-des'),
+    ];
+
+    // assign to view
+    $view->with('sidebar_items', $sidebar_items );
+    $view->with('order_by', $order_by);
+    $view->with('sorting', $sorting);
+    $view->with('plang_admin', $plang_admin);
+    $view->with('plang_front', $plang_front);
+});
+
+
+
+View::composer([
+    // Helpdesk
+    'package-helpdesk::student.helpdesk-edit',
+    'package-helpdesk::student.helpdesk-form',
+    'package-helpdesk::student.helpdesk-items',
+    'package-helpdesk::student.helpdesk-item',
+    'package-helpdesk::student.helpdesk-search',
+    'package-helpdesk::student.helpdesk-view',
+
+], function ($view) {
+
+    //Order by params
+    $params = Request::all();
+
+    /**
+     * $plang-admin
+     * $plang-front
+     */
+    $plang_admin = 'helpdesk-admin';
+    $plang_front = 'helpdesk-front';
+
+    $fooCategory = new FooCategory();
+    $key = $fooCategory->getContextKeyByRef('admin/helpdesk');
+
+    /**
+     * $sidebar_items
+     */
+    $sidebar_items = [
+        trans('helpdesk-admin.sidebar.add') => [
+            'url' => URL::route('student.helpdesk.edit', []),
+            'icon' => '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'
+        ],
+        trans('helpdesk-admin.sidebar.list_helpdesk') => [
+            "url" => URL::route('student.helpdesk', []),
+            'icon' => '<i class="fa fa-list-ul" aria-hidden="true"></i>'
+        ],
+    ];
+
+    /**
+     * $sorting
+     * $order_by
+     */
+    $orders = [
+        '' => trans($plang_admin.'.form.no-selected'),
+        'id' => trans($plang_admin.'.fields.helpdesk_id'),
+        'helpdesk_name' => trans($plang_admin.'.fields.helpdesk_name'),
+        'updated_at' => trans($plang_admin.'.fields.updated_at'),
+        'status' => trans($plang_admin.'.fields.status'),
+    ];
+    $sortTable = new SortTable();
+    $sortTable->setOrders($orders);
+    $sorting = $sortTable->linkOrders();
+
+    //Order by
+    $order_by = [
+        'asc' => trans('category-admin.order.by-asc'),
+        'desc' => trans('category-admin.order.by-des'),
+    ];
+
+    // assign to view
+    $view->with('sidebar_items', $sidebar_items );
+    $view->with('order_by', $order_by);
+    $view->with('sorting', $sorting);
+    $view->with('plang_admin', $plang_admin);
+    $view->with('plang_front', $plang_front);
+});

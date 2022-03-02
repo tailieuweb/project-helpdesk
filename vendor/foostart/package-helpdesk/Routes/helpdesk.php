@@ -124,5 +124,53 @@ Route::group(['middleware' => ['web']], function () {
             'as' => 'helpdesk.search',
             'uses' => 'HelpdeskAdminController@search'
         ]);
+
+        /**
+         * list of courses by teacher
+         */
+        Route::get('admin/helpdesk/list', [
+            'as' => 'teacher.helpdesk',
+            'uses' => 'HelpDeskAdminController@helpdeskByTeacher'
+        ]);
+
+        /**
+         * View list of students on course by teacher
+         */
+        Route::get('admin/helpdesk/teacher/view', [
+            'as' => 'teacher.helpdesk.view',
+            'uses' => 'HelpDeskAdminController@viewCourseByTeacher'
+        ]);
+
+        /******************************************************************************
+         * STUDENT
+         */
+        /**
+         * View list of students on course by teacher
+         */
+        Route::get('admin/helpdesk/student', [
+            'as' => 'student.helpdesk',
+            'uses' => 'HelpDeskAdminController@viewRequestByStudent'
+        ]);
+        /**
+         * edit-add
+         */
+        Route::get('admin/helpdesk/student/edit', [
+            'as' => 'student.helpdesk.edit',
+            'uses' => 'HelpdeskAdminController@editByStudent'
+        ]);
+        /**
+         * post
+         */
+        Route::post('admin/helpdesk/student/edit', [
+            'as' => 'student.helpdesk.post',
+            'uses' => 'HelpdeskAdminController@postByStudent'
+        ]);
+        /**
+         * delete
+         */
+        Route::get('admin/helpdesk/student/delete', [
+            'as' => 'student.helpdesk.delete',
+            'uses' => 'HelpdeskAdminController@deleteByStudent'
+        ]);
     });
 });

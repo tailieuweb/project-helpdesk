@@ -10,7 +10,11 @@
 |
 */
 
+use Foostart\Acl\Authentication\Repository\UserRepositorySearchFilter;
 use Foostart\Category\Library\Controllers\FooController;
+use Foostart\Courses\Models\ClassesUsers;
+use Foostart\Courses\Models\Course;
+use Foostart\Internship\Models\Internship;
 use Illuminate\Http\Request;
 use URL, Route, Redirect;
 use Illuminate\Support\Facades\App;
@@ -34,6 +38,7 @@ class HelpdeskAdminController extends FooController {
         // models
         $this->obj_item = new Helpdesk(array('perPage' => 10));
         $this->obj_category = new Category();
+        $this->obj_item_course = new Course(array('perPage' => 30));
 
         // validators
         $this->obj_validator = new HelpdeskValidator();
@@ -58,7 +63,17 @@ class HelpdeskAdminController extends FooController {
                 'lang'  => $this->package_name.'::admin.'.$this->package_base_name.'-lang',
                 'sample'  => $this->package_name.'::admin.'.$this->package_base_name.'-sample',
                 'mail'  => $this->package_name.'::admin.'.$this->package_base_name.'-mail',
-            ]
+            ],
+            'teacher' => [
+                'items' => $this->package_name.'::teacher.course-items',
+                'view' => $this->package_name.'::teacher.course-view',
+                'edit'  => $this->package_name.'::teacher.course-edit'
+
+            ],
+            'student' => [
+                'items' => $this->package_name.'::student.'.$this->package_base_name.'-items',
+                'edit'  => $this->package_name.'::student.'.$this->package_base_name.'-edit',
+            ],
         ];
 
         $this->data_view['status'] = $this->obj_item->getPluckStatus();
@@ -492,4 +507,296 @@ class HelpdeskAdminController extends FooController {
         }
     }
 
+
+    /**
+     * Show list of items
+     * @return view list of items
+     * @date 27/12/2017
+     */
+    public function helpdeskByTeacher(Request $request) {
+
+        //Get current logged user
+        $user = $this->getUser();
+        $teacher_id = $user['user_id'];
+
+        $params = array_merge($this->getUser(), $request->all());
+
+        $courses = $this->obj_item_course->selectItems($params, $teacher_id);
+
+
+        // display view
+        $this->data_view = array_merge($this->data_view, array(
+            'courses' => $courses,
+            'request' => $request,
+            'params' => $params,
+            'config_status' => $this->obj_item->config_status
+        ));
+
+        return view($this->page_views['teacher']['items'], $this->data_view);
+    }
+
+    /**
+     * View list of students by teacher
+     * @param Request $request
+     */
+    public function viewCourseByTeacher(Request $request) {
+
+        // Get user info
+        $user = $this->getUser();
+        $item = NULL;
+
+        $params = $request->all();
+        $params['id'] = $request->get('id', NULL);
+
+        //Not existing id, id is not numberic
+        if (empty($params['id']) || !is_numeric($params['id'])) {
+            return Redirect::route($this->root_router.'.course')
+                ->withMessage(trans($this->plang_admin . '.actions.edit-error'));
+        }
+
+        //Check valid course id
+        $obj_item_course = new Course(array('perPage' => 10));
+        if (!empty($params['id'])) {
+            $item = $obj_item_course->selectItem($params, FALSE);
+
+            if (empty($item) || ($item->teacher_id != $user['user_id'])) {
+                return Redirect::route($this->root_router.'.course')
+                    ->withMessage(trans($this->plang_admin . '.actions.edit-error'));
+            }
+
+        }
+
+        // Get students by teacher
+        $obj_class_user = new ClassesUsers();
+        $_params = [
+            'course_id' => $params['id']
+        ];
+        $items = $obj_class_user->selectItems($_params);
+        $items = $items->toArray();
+
+        //Update students info
+        $obj_user = new UserRepositorySearchFilter(0);
+        for ($i = 0; $i < count($items); $i++) {
+            $params = [
+                'id' => $items[$i]['user_id']
+            ];
+            $user_info = $obj_user->all($params)->first();
+
+            if (!empty($user_info)) {
+                $items[$i]['email'] = $user_info->email;
+                $items[$i]['user_name'] = $user_info->user_name;
+                $items[$i]['first_name'] = $user_info->first_name;
+                $items[$i]['last_name'] = $user_info->last_name;
+                $items[$i]['phone'] = $user_info->phone;
+            } else {
+                $items[$i]['email'] = 'Invalid student';
+                $items[$i]['user_name'] = 'Invalid student';
+                $items[$i]['first_name'] = 'Invalid student';
+                $items[$i]['last_name'] = 'Invalid student';
+                $items[$i]['phone'] = 'Invalid student';
+            }
+        }
+
+        //Get company info
+        if (!empty($items)) {
+            $obj_internship = new Internship();
+            foreach ($items as $index => $item) {
+                $_params = [
+                    'user_id' => $item['user_id'],
+                    'course_id' => $item['course_id'],
+                ];
+                $internship = $obj_internship->selectItem($_params);
+
+                //Add company info to user
+                if (!empty($internship)) {
+                    //Set company info
+                    $items[$index]['company_name'] = $internship->company_name;
+                }
+            }
+        }
+
+        // display view
+        $this->data_view = array_merge($this->data_view, array(
+            'item' => $item,
+            'items' => $items,
+            'request' => $request,
+
+        ));
+
+        return view($this->page_views['teacher']['view'], $this->data_view);
+
+    }
+
+    /**
+     * Display list of request by student
+     */
+    public function viewRequestByStudent(Request $request) {
+
+        // Get user info
+        $user = $this->getUser();
+        $item = NULL;
+
+        $params = $request->all();
+        $params['created_user_id'] = $user['user_id'];
+
+        $helpdesk = $this->obj_item->selectItems($params);
+
+        // display view
+        $this->data_view = array_merge($this->data_view, array(
+            'helpdesk' => $helpdesk,
+            'request' => $request,
+            'params' => $params,
+            'config_status' => $this->obj_item->config_status
+        ));
+
+        return view($this->page_views['student']['items'], $this->data_view);
+    }
+
+    /**
+     * Edit existing item by {id} parameters OR
+     * Add new item
+     * @return view edit page
+     * @date 26/12/2017
+     */
+    public function editByStudent(Request $request) {
+
+        $item = NULL;
+        $categories = NULL;
+
+        $params = $request->all();
+        $params['id'] = $request->get('id', NULL);
+
+        $context = $this->obj_item->getContext($this->category_ref_name);
+
+        if (!empty($params['id'])) {
+
+            $item = $this->obj_item->selectItem($params, FALSE);
+
+            if (empty($item)) {
+                return Redirect::route('student.helpdesk.edit')
+                    ->withMessage(trans($this->plang_admin.'.actions.edit-error'));
+            }
+        }
+
+        //get categories by context
+        $context = $this->obj_item->getContext($this->category_ref_name);
+
+        if ($context) {
+            $params['context_id'] = $context->context_id;
+            $categories = $this->obj_category->pluckSelect($params);
+        }
+
+        // display view
+        $this->data_view = array_merge($this->data_view, array(
+            'item' => $item,
+            'categories' => $categories,
+            'request' => $request,
+            'context' => $context,
+        ));
+        return view($this->page_views['student']['edit'], $this->data_view);
+    }
+
+    /**
+     * Processing data from POST method: add new item, edit existing item
+     * @return view edit page
+     * @date 27/12/2017
+     */
+    public function postByStudent(Request $request) {
+
+        $item = NULL;
+
+        $params = array_merge($this->getUser(), $request->all());
+
+        $is_valid_request = $this->isValidRequest($request);
+
+        $id = (int) $request->get('id');
+
+        if ($is_valid_request && $this->obj_validator->validate($params)) {// valid data
+
+            // update existing item
+            if (!empty($id)) {
+
+                $item = $this->obj_item->find($id);
+
+                if (!empty($item)) {
+
+                    $params['id'] = $id;
+                    $item = $this->obj_item->updateItem($params);
+
+                    // message
+                    return Redirect::route('student.helpdesk.edit', ["id" => $item->id])
+                        ->withMessage(trans($this->plang_admin.'.actions.edit-ok'));
+                } else {
+
+                    // message
+                    return Redirect::route('student.helpdesk.edit')
+                        ->withMessage(trans($this->plang_admin.'.actions.edit-error'));
+                }
+
+                // add new item
+            } else {
+
+                $item = $this->obj_item->insertItem($params);
+
+                if (!empty($item)) {
+
+                    //message
+                    return Redirect::route('student.helpdesk.edit', ["id" => $item->id])
+                        ->withMessage(trans($this->plang_admin.'.actions.add-ok'));
+                } else {
+
+                    //message
+                    return Redirect::route('student.helpdesk.edit', ["id" => $item->id])
+                        ->withMessage(trans($this->plang_admin.'.actions.add-error'));
+                }
+
+            }
+
+        } else { // invalid data
+
+            $errors = $this->obj_validator->getErrors();
+
+            // passing the id incase fails editing an already existing item
+            return Redirect::route('student.helpdesk.edit', $id ? ["id" => $id]: [])
+                ->withInput()->withErrors($errors);
+        }
+    }
+
+    /**
+     * Delete existing item
+     * @return view list of items
+     * @date 27/12/2017
+     */
+    public function deleteByStudent(Request $request) {
+
+        $item = NULL;
+        $flag = TRUE;
+        $params = array_merge($this->getUser(), $request->all());
+        $delete_type = isset($params['del-forever'])?'delete-forever':'delete-trash';
+        $id = (int)$request->get('id');
+        $ids = $request->get('ids');
+
+        $is_valid_request = $this->isValidRequest($request);
+
+        if ($is_valid_request && (!empty($id) || !empty($ids))) {
+
+            $ids = !empty($id)?[$id]:$ids;
+
+            foreach ($ids as $id) {
+
+                $params['id'] = $id;
+
+                if (!$this->obj_item->deleteItem($params, $delete_type)) {
+                    $flag = FALSE;
+                }
+            }
+            if ($flag) {
+                return Redirect::route('student.helpdesk')
+                    ->withMessage(trans($this->plang_admin.'.actions.delete-ok'));
+            }
+        }
+
+        return Redirect::route('student.helpdesk')
+            ->withMessage(trans($this->plang_admin.'.actions.delete-error'));
+    }
 }

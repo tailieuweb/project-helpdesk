@@ -151,11 +151,27 @@ return [
             "link" => '/admin/internship',
             "permissions" => []
         ],
+
         // Helpdesk
         [
             "name" => "acl-admin.menu.helpdesk",
             "route" => "helpdesk",
             "link" => '/admin/helpdesk',
+            "permissions" => [$admin]
+        ],
+
+        // Courses by teacher
+        [
+            "name" => "acl-admin.menu.helpdesk",
+            "route" => "teacher.helpdesk",
+            "link" => '/admin/helpdesk/list',
+            "permissions" => [$admin, "_teacher"]
+        ],
+        // Internship
+        [
+            "name" => "Request",
+            "route" => "student.helpdesk",
+            "link" => '/admin/helpdesk/student',
             "permissions" => []
         ],
     ]
