@@ -221,6 +221,7 @@ class ComposerStaticInit7997ba8f77937a83d1f609e4e7f1bcbb
             'Foostart\\Pexcel\\' => 16,
             'Foostart\\Module\\' => 16,
             'Foostart\\Internship\\' => 20,
+            'Foostart\\Helpdesk\\' => 18,
             'Foostart\\Front\\' => 15,
             'Foostart\\Filemanager\\' => 21,
             'Foostart\\Crawler\\' => 17,
@@ -571,6 +572,10 @@ class ComposerStaticInit7997ba8f77937a83d1f609e4e7f1bcbb
         'Foostart\\Internship\\' => 
         array (
             0 => __DIR__ . '/..' . '/foostart/package-internship',
+        ),
+        'Foostart\\Helpdesk\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/foostart/package-helpdesk',
         ),
         'Foostart\\Front\\' => 
         array (
@@ -1912,6 +1917,11 @@ class ComposerStaticInit7997ba8f77937a83d1f609e4e7f1bcbb
         'Foostart\\Front\\FrontServiceProvider' => __DIR__ . '/..' . '/foostart/package-front/FrontServiceProvider.php',
         'Foostart\\Front\\Models\\Front' => __DIR__ . '/..' . '/foostart/package-front/Models/Front.php',
         'Foostart\\Front\\Validators\\FrontValidator' => __DIR__ . '/..' . '/foostart/package-front/Validators/FrontValidator.php',
+        'Foostart\\Helpdesk\\Constants\\HelpdeskConstants' => __DIR__ . '/..' . '/foostart/package-helpdesk/Constants/HelpdeskConstants.php',
+        'Foostart\\Helpdesk\\Controllers\\Admin\\HelpdeskAdminController' => __DIR__ . '/..' . '/foostart/package-helpdesk/Controllers/Admin/HelpdeskAdminController.php',
+        'Foostart\\Helpdesk\\HelpdeskServiceProvider' => __DIR__ . '/..' . '/foostart/package-helpdesk/HelpdeskServiceProvider.php',
+        'Foostart\\Helpdesk\\Models\\Helpdesk' => __DIR__ . '/..' . '/foostart/package-helpdesk/Models/Helpdesk.php',
+        'Foostart\\Helpdesk\\Validators\\HelpdeskValidator' => __DIR__ . '/..' . '/foostart/package-helpdesk/Validators/HelpdeskValidator.php',
         'Foostart\\Internship\\Constants\\InternshipConstants' => __DIR__ . '/..' . '/foostart/package-internship/Constants/InternshipConstants.php',
         'Foostart\\Internship\\Controllers\\Admin\\InternshipAdminController' => __DIR__ . '/..' . '/foostart/package-internship/Controllers/Admin/InternshipAdminController.php',
         'Foostart\\Internship\\Controllers\\Admin\\InternshipDiaryAdminController' => __DIR__ . '/..' . '/foostart/package-internship/Controllers/Admin/InternshipDiaryAdminController.php',

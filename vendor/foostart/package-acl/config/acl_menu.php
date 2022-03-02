@@ -151,5 +151,12 @@ return [
             "link" => '/admin/internship',
             "permissions" => []
         ],
+        // Helpdesk
+        [
+            "name" => "acl-admin.menu.helpdesk",
+            "route" => "helpdesk",
+            "link" => '/admin/helpdesk',
+            "permissions" => []
+        ],
     ]
 ];

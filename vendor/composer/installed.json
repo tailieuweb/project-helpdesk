@@ -1378,6 +1378,50 @@
             "install-path": "../foostart/package-front"
         },
         {
+            "name": "foostart/package-helpdesk",
+            "version": "20220302",
+            "version_normalized": "20220302",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/foostart/package-helpdesk.git",
+                "reference": "623796d8731f72b75e10d7530aaa5e83ff9d1d04"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/foostart/package-helpdesk/zipball/623796d8731f72b75e10d7530aaa5e83ff9d1d04",
+                "reference": "623796d8731f72b75e10d7530aaa5e83ff9d1d04",
+                "shasum": ""
+            },
+            "time": "2022-03-02T06:13:40+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Foostart\\Helpdesk\\": "/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "FooStart",
+                    "email": "foostart.com@gmail.com",
+                    "homepage": "http://foostart.com"
+                }
+            ],
+            "description": "Manage helpdesk",
+            "keywords": [
+                "foostart"
+            ],
+            "support": {
+                "issues": "https://github.com/foostart/package-helpdesk/issues",
+                "source": "https://github.com/foostart/package-helpdesk/tree/20220302"
+            },
+            "install-path": "../foostart/package-helpdesk"
+        },
+        {
             "name": "foostart/package-internship",
             "version": "1.0.1",
             "version_normalized": "1.0.1.0",

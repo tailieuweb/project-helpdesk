@@ -10,6 +10,7 @@ return [
      */
     'breadcrumbs' => [
         'admin' => 'Admin',
+        'helpdesk' => 'Helpdesk',
         'teacher' => 'Teacher',
         'view' => 'View',
         'diary' => 'Diary',
@@ -47,6 +48,7 @@ return [
      */
     'menu' => [
         'dashboard' => 'Dashboard',
+        'helpdesk' => 'Helpdesk',
         'internship' => 'Internship',
         'course' => 'Course',
         'users' => 'Users',

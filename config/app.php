@@ -180,6 +180,7 @@ return [
         Foostart\Company\CompanyServiceProvider::class,
         Foostart\Courses\CoursesServiceProvider::class,
         Foostart\Internship\InternshipServiceProvider::class,
+        Foostart\Helpdesk\HelpdeskServiceProvider::class,
 
         /*
          * Application Service Providers...

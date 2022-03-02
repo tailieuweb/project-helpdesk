@@ -81,6 +81,7 @@ return array(
     'Foostart\\Pexcel\\' => array($vendorDir . '/foostart/package-pexcel'),
     'Foostart\\Module\\' => array($vendorDir . '/foostart/package-module'),
     'Foostart\\Internship\\' => array($vendorDir . '/foostart/package-internship'),
+    'Foostart\\Helpdesk\\' => array($vendorDir . '/foostart/package-helpdesk'),
     'Foostart\\Front\\' => array($vendorDir . '/foostart/package-front'),
     'Foostart\\Filemanager\\' => array($vendorDir . '/foostart/package-filemanager/src'),
     'Foostart\\Crawler\\' => array($vendorDir . '/foostart/package-crawler'),
