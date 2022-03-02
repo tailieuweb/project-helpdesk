@@ -4,11 +4,19 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Foostart\Category\Helpers\FoostartMigration;
 
-class CreateServiceTable extends FoostartMigration
+<<<<<<< HEAD:database/migrations/2021_01_03_102927_create_myservice_table.php
+class CreateMyserviceTable extends FoostartMigration
 {
     public function __construct() {
-        $this->table = 'service';
+        $this->table = 'myservice';
         $this->prefix_column = 'service_';
+=======
+class CreateApproverTable extends FoostartMigration
+{
+    public function __construct() {
+        $this->table = 'approver';
+        $this->prefix_column = 'approver_';
+>>>>>>> f9bc7997 (test Nhuần):vendor/foostart/package-helpdesk/database/migrations/2021_01_03_102927_create_approve_table.php
     }
     /**
      * Run the migrations.
@@ -23,9 +31,17 @@ class CreateServiceTable extends FoostartMigration
             $table->increments($this->prefix_column . 'id')->comment('Primary key');
 
             // Relation
-            $table->integer('request_id')->comment('Request ID');
+            $table->integer('flow_id')->comment('Flow ID');
 
             // Other attributes
+<<<<<<< HEAD:database/migrations/2021_01_03_102927_create_myservice_table.php
+=======
+            $table->integer('context_id')->comment('Context ID');
+            $table->integer('context_id')->comment('Context ID');
+            $table->integer('flow_id')->comment('Flow ID');
+
+            $table->string($this->prefix_column . 'context_vale', 255)->comment('ContextValue');
+>>>>>>> f9bc7997 (test Nhuần):vendor/foostart/package-helpdesk/database/migrations/2021_01_03_102927_create_approve_table.php
             $table->string($this->prefix_column . 'name', 255)->comment('Service name');
             $table->string($this->prefix_column . 'slug', 255)->comment('Service slug');
             $table->string($this->prefix_column . 'start_date', 255)->nullable()->comment('Service start date');
