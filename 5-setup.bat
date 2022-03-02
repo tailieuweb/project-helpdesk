@@ -24,6 +24,7 @@ php artisan vendor:publish --provider="Foostart\Pexcel\PexcelServiceProvider" --
 php artisan vendor:publish --provider="Foostart\Post\PostServiceProvider" --force
 php artisan vendor:publish --provider="Foostart\Slideshow\SlideshowServiceProvider" --force
 php artisan vendor:publish --provider="Foostart\Acl\Authentication\AuthenticationServiceProvider" --force
+php artisan vendor:publish --provider="Foostart\Task\TaskServiceProvider" --force
 php artisan vendor:publish --tag=lfm_config
 php artisan vendor:publish --tag=lfm_public
 php artisan migrate

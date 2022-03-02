@@ -31,7 +31,7 @@ class CreateHelpdeskTable extends FoostartMigration
             $table->string($this->prefix_column . 'start_date', 255)->nullable()->comment('Helpdesk start date');
             $table->string($this->prefix_column . 'end_date', 255)->nullable()->comment('Helpdesk end date');
 
-            $table->string($this->prefix_column . 'image', 255)->nullable()->comment('Helpdesk image');
+            $table->text($this->prefix_column . 'files', 255)->nullable()->comment('Helpdesk files');
             $table->text($this->prefix_column . 'description')->nullable()->comment('Helpdesk description');
 
             //Set common columns

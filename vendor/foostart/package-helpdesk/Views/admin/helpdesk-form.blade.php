@@ -111,16 +111,15 @@
         <!--/END MENU1-->
         <!--OTHER-->
         <div id="menu_2" class="tab-pane fade">
-            <!--SITE IMAGE-->
-            @include('package-category::admin.partials.input_image', [
-                'name' => 'helpdesk_image',
-                'label' => trans($plang_admin.'.labels.helpdesk_image'),
-                'value' => @$item->helpdesk_image,
-                'description' => trans($plang_admin.'.descriptions.helpdesk_image'),
+            <!--POST FILES-->
+            @include('package-category::admin.partials.input_files', [
+                'name' => 'files',
+                'label' => trans($plang_admin.'.labels.files'),
+                'value' => @$item->helpdesk_files,
+                'description' => trans($plang_admin.'.descriptions.files'),
                 'errors' => $errors,
-                'lfm_config' => TRUE
             ])
-            <!--/SITE IMAGE-->
+            <!--/POST FILES-->
         </div>
 
     </div>

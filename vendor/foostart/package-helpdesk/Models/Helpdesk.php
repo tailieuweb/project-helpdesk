@@ -33,7 +33,7 @@ class Helpdesk extends FooModel {
             'helpdesk_slug',
             'helpdesk_start_date',
             'helpdesk_end_date',
-            'helpdesk_image',
+            'helpdesk_files',
             'helpdesk_description',
         ]);
 
@@ -62,6 +62,10 @@ class Helpdesk extends FooModel {
             'helpdesk_description' => [
                 'name' => 'helpdesk_description',
                 'type' => 'Text',
+            ],
+            'helpdesk_files' => [
+                'name' => 'files',
+                'type' => 'Json',
             ],
         ]);
 
