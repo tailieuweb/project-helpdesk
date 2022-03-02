@@ -192,6 +192,7 @@ return array(
     'Database\\Seeders\\CourseSeeder' => $baseDir . '/database/seeders/CourseSeeder.php',
     'Database\\Seeders\\CrawlerSeeder' => $baseDir . '/database/seeders/CrawlerSeeder.php',
     'Database\\Seeders\\DatabaseSeeder' => $baseDir . '/database/seeders/DatabaseSeeder.php',
+    'Database\\Seeders\\HelpdeskSeeder' => $baseDir . '/database/seeders/HelpdeskSeeder.php',
     'Database\\Seeders\\InternshipSeeder' => $baseDir . '/database/seeders/InternshipSeeder.php',
     'Database\\Seeders\\ModulesSeeder' => $baseDir . '/database/seeders/ModulesSeeder.php',
     'Database\\Seeders\\PexcelSeeder' => $baseDir . '/database/seeders/PexcelSeeder.php',
