@@ -258,6 +258,9 @@ class Helpdesk extends FooModel {
 
         if (!empty($item)) {
             $dataFields = $this->getDataFields($params, $this->fields);
+            if (!empty($dataFields['created_user_id'])) {
+                unset($dataFields['created_user_id']);
+            }
 
             foreach ($dataFields as $key => $value) {
                 $item->$key = $value;

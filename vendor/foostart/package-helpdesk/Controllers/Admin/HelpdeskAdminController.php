@@ -638,6 +638,9 @@ class HelpdeskAdminController extends FooController {
 
         $params = $request->all();
         $params['created_user_id'] = $user['user_id'];
+        if (!empty($request->get('teacher_id'))) {
+            $params['created_user_id'] = $request->get('student_id');
+        }
 
         $helpdesk = $this->obj_item->selectItems($params);
 
