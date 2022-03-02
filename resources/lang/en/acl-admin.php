@@ -45,6 +45,7 @@ return [
      */
     'menu' => [
         'dashboard' => 'Dashboard',
+        'helpdesk' => 'Helpdesk',
         'internship' => 'Internship',
         'course' => 'Course',
         'users' => 'Users',

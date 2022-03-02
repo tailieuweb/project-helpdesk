@@ -4,10 +4,10 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 use Foostart\Category\Helpers\FoostartMigration;
 
-class CreateMyserviceTable extends FoostartMigration
+class CreateServiceTable extends FoostartMigration
 {
     public function __construct() {
-        $this->table = 'myservice';
+        $this->table = 'service';
         $this->prefix_column = 'service_';
     }
     /**

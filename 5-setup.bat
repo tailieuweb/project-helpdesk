@@ -20,4 +20,11 @@ password: admin
 Bước 5: Tạo migration trong Helpdesk
 Tạo: foostart/package-helpdesk/database/migrations
 php artisan vendor:publish --provider="Foostart\Helpdesk\HelpdeskServiceProvider" --force
+php artisan vendor:publish --provider="Foostart\Pexcel\PexcelServiceProvider" --force
+php artisan vendor:publish --provider="Foostart\Post\PostServiceProvider" --force
+php artisan vendor:publish --provider="Foostart\Slideshow\SlideshowServiceProvider" --force
+php artisan vendor:publish --provider="Foostart\Acl\Authentication\AuthenticationServiceProvider" --force
+php artisan vendor:publish --tag=lfm_config
+php artisan vendor:publish --tag=lfm_public
 php artisan migrate
+php artisan db:seed

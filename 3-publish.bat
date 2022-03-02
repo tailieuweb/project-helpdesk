@@ -4,4 +4,4 @@ php artisan vendor:publish --provider="Foostart\Internship\InternshipServiceProv
 php artisan vendor:publish --provider="Foostart\Category\CategoryServiceProvider" --force
 php artisan vendor:publish --provider="Foostart\Pexcel\PexcelServiceProvider" --force
 php artisan vendor:publish --provider="Foostart\Acl\Authentication\AuthenticationServiceProvider" --force
-php artisan vendor:publish --provider="Foostart\English\EnglishServiceProvider" --force
+
