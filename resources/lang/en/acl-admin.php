@@ -32,8 +32,6 @@ return [
         'pattern' => 'Pattern',
         'pexcel' => 'Pexcel',
         'company' => 'Company',
-        'posts' => 'Posts',
-        'dashboard' => 'Dashboard',
     ],
 
     /***********************************************************************
@@ -45,7 +43,6 @@ return [
      */
     'menu' => [
         'dashboard' => 'Dashboard',
-        'helpdesk' => 'Helpdesk',
         'internship' => 'Internship',
         'course' => 'Course',
         'users' => 'Users',

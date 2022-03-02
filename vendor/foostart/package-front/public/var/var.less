@@ -1,0 +1,86 @@
+/*Color*/
+@color_Cylindrical_coordinate: #f5ce31;
+@color_white : #fff;
+@color_border_gray: #d9d9d9;
+@color_dark_cerulean: #003b7a;
+@color_background: #4bb4b6;
+@color_time: #4e4e4e;
+@color_organge: #efc94c;
+@color_orange_brown: #e27a3f; 
+@color_lipstick: #992255;
+@color_turquoise: #45b29d;
+@color_font: #c02e25;
+@color_font1: #258b77;
+@color_font2:#d69200;
+@color_font3:#992255;
+@color_font4:#106982;
+/*Font-size*/
+@font-size-heading-2: bold 1.8em;
+@font-size-heading-3: 700 20px;
+@font-size-heading-4: bold 18px;
+@font-size-heading-5: 1.5rem;
+@font-size-heading-6: normal 14px;
+@font-size-article-title: bold 18px;
+@font-size-article-description: 0.9em;
+@font-size-article-date: 3.1em;
+@border_swiper:0.7rem;
+/*Style-link */
+@font-size-article-title;
+/*Value*/
+
+@lg-1200:1200px;
+@md-992:992px;
+@sm-768: 768px;
+@xs-480: 480px;
+/*Display-type*/
+@transition: width 1s;
+@transition_swiper: width 0.2s;
+@transition_slide:left 1.35s, opacity 0.5s;
+/*Effect Hover Img*/
+.hover-img(){
+    display: inline-block;
+    &:after{
+        content: '';
+        position: absolute;
+        pointer-events: none;
+        top: -110%;
+        left: -400%;
+        width: 150%;
+        height: 150%;
+        opacity: 0;
+        background: linear-gradient(
+            to right, 
+            rgba(255, 255, 255, 0.13) 0%,
+            rgba(255, 255, 255, 0.13) 77%,
+            rgba(255, 255, 255, 0.5) 92%,
+            rgba(255, 255, 255, 0.0) 100%
+            );
+    }
+    &:hover:after{
+        opacity: 1;
+        top: -20%;
+        left: -30%;
+        transition-property: left, top, opacity;
+        transition-duration: .8s, .8s, .15s;
+        transition-timing-function: ease;
+    }
+}
+/*Effect hover*/
+.effect(){
+    .productdot{
+        position: absolute;
+        width: 0%;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: 0;
+        background: #42a7a9;
+        height: 2px;
+        transition-duration: 0.5s;
+    }
+    .boxshow:hover{
+        .productdot{
+            width: 100%;
+        }
+    }
+}

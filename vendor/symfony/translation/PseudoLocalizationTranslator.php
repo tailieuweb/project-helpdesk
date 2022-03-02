@@ -21,15 +21,11 @@ final class PseudoLocalizationTranslator implements TranslatorInterface
     private const EXPANSION_CHARACTER = '~';
 
     private $translator;
-    private bool $accents;
-    private float $expansionFactor;
-    private bool $brackets;
-    private bool $parseHTML;
-
-    /**
-     * @var string[]
-     */
-    private array $localizableHTMLAttributes;
+    private $accents;
+    private $expansionFactor;
+    private $brackets;
+    private $parseHTML;
+    private $localizableHTMLAttributes;
 
     /**
      * Available options:
@@ -86,7 +82,7 @@ final class PseudoLocalizationTranslator implements TranslatorInterface
     /**
      * {@inheritdoc}
      */
-    public function trans(string $id, array $parameters = [], string $domain = null, string $locale = null): string
+    public function trans(string $id, array $parameters = [], string $domain = null, string $locale = null)
     {
         $trans = '';
         $visibleText = '';
@@ -110,11 +106,6 @@ final class PseudoLocalizationTranslator implements TranslatorInterface
         $this->addBrackets($trans);
 
         return $trans;
-    }
-
-    public function getLocale(): string
-    {
-        return $this->translator->getLocale();
     }
 
     private function getParts(string $originalTrans): array

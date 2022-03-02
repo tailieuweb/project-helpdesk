@@ -137,9 +137,7 @@ class Snapshot
             $this->includedFiles = get_included_files();
         }
 
-        if ($includeTraits) {
-            $this->traits = get_declared_traits();
-        }
+        $this->traits = get_declared_traits();
     }
 
     public function excludeList(): ExcludeList
@@ -273,7 +271,7 @@ class Snapshot
 
         foreach (array_keys($GLOBALS) as $key) {
             if ($key !== 'GLOBALS' &&
-                !in_array($key, $superGlobalArrays, true) &&
+                !in_array($key, $superGlobalArrays) &&
                 $this->canBeSerialized($GLOBALS[$key]) &&
                 !$this->excludeList->isGlobalVariableExcluded($key)) {
                 /* @noinspection UnserializeExploitsInspection */

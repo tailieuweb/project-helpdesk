@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Fit'),
 
     /*
     |--------------------------------------------------------------------------
@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Asia/Ho_Chi_Minh',
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'vi',
 
     /*
     |--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'vi',
 
     /*
     |--------------------------------------------------------------------------
@@ -165,6 +165,21 @@ return [
         /*
          * Package Service Providers...
          */
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        Foostart\Acl\Authentication\AuthenticationServiceProvider::class,
+        Foostart\Category\CategoryServiceProvider::class,
+        Foostart\Post\PostServiceProvider::class,
+        Foostart\Slideshow\SlideshowServiceProvider::class,
+        Foostart\Filemanager\FilemanagerServiceProvider::class,
+        Foostart\Front\FrontServiceProvider::class,
+        Foostart\Contact\ContactServiceProvider::class,
+        Foostart\Module\ModuleServiceProvider::class,
+        Foostart\Crawler\CrawlerServiceProvider::class,
+        Foostart\Pexcel\PexcelServiceProvider::class,
+        Foostart\Company\CompanyServiceProvider::class,
+        Foostart\Courses\CoursesServiceProvider::class,
+        Foostart\Internship\InternshipServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -174,17 +189,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
-        Foostart\Acl\Authentication\AuthenticationServiceProvider::class,
-        Foostart\Category\CategoryServiceProvider::class,
-        Foostart\Post\PostServiceProvider::class,
-        Foostart\Slideshow\SlideshowServiceProvider::class,
-        Foostart\Filemanager\FilemanagerServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class,
-        Foostart\Pexcel\PexcelServiceProvider::class,
-        Foostart\Helpdesk\HelpdeskServiceProvider::class,
-        Maatwebsite\Excel\ExcelServiceProvider::class,
-
 
     ],
 
@@ -212,7 +216,6 @@ return [
         'Config' => Illuminate\Support\Facades\Config::class,
         'Cookie' => Illuminate\Support\Facades\Cookie::class,
         'Crypt' => Illuminate\Support\Facades\Crypt::class,
-        'Date' => Illuminate\Support\Facades\Date::class,
         'DB' => Illuminate\Support\Facades\DB::class,
         'Eloquent' => Illuminate\Database\Eloquent\Model::class,
         'Event' => Illuminate\Support\Facades\Event::class,
@@ -220,14 +223,12 @@ return [
         'Gate' => Illuminate\Support\Facades\Gate::class,
         'Hash' => Illuminate\Support\Facades\Hash::class,
         'Http' => Illuminate\Support\Facades\Http::class,
-        'Js' => Illuminate\Support\Js::class,
         'Lang' => Illuminate\Support\Facades\Lang::class,
         'Log' => Illuminate\Support\Facades\Log::class,
         'Mail' => Illuminate\Support\Facades\Mail::class,
         'Notification' => Illuminate\Support\Facades\Notification::class,
         'Password' => Illuminate\Support\Facades\Password::class,
         'Queue' => Illuminate\Support\Facades\Queue::class,
-        'RateLimiter' => Illuminate\Support\Facades\RateLimiter::class,
         'Redirect' => Illuminate\Support\Facades\Redirect::class,
         // 'Redis' => Illuminate\Support\Facades\Redis::class,
         'Request' => Illuminate\Support\Facades\Request::class,
@@ -241,9 +242,12 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        /*
+         * Package Provider
+         */
         'Image' => Intervention\Image\Facades\Image::class,
-        'Input' => Illuminate\Support\Facades\Request::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'Input' => Illuminate\Support\Facades\Request::class,
 
     ],
 
