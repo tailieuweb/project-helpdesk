@@ -1,13 +1,13 @@
 @extends('package-acl::admin.layouts.base-2cols')
 
 @section('title')
-    Internship
+    Helpdesk
 @stop
 
 @section('content')
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
-            <h3><i class="fa fa-dashboard"></i> Internship</h3>
+            <h3><i class="fa fa-dashboard"></i> HelpDesk</h3>
             <hr/>
         </div>
         <div class="col-md-4">
@@ -15,20 +15,26 @@
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nội dung</th>
+                <th scope="col">Hướng dẫn sinh viên thực hiện các mẫu đơn</th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <th scope="row">1</th>
                 <td><a href="https://docs.google.com/spreadsheets/d/1v2eXhnEx4aVxHGzSY2-AnWNeSrkhpnHYca8HmgdlgwE/edit?usp=sharing">
-                        Tài liệu hướng dẫn sử dụng hệ thống Internship
+                        Đơn xin nghỉ học
                     </a></td>
             </tr>
             <tr>
                 <th scope="row">2</th>
                 <td><a href="https://drive.google.com/drive/folders/11JH_bLiEdd6dwEVltc1TVb7cC8lPfZ4n?usp=sharing">
-                        Biểu mẫu thực tập
+                        Đơn xin rút học phần
+                    </a></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td><a href="https://drive.google.com/drive/folders/11JH_bLiEdd6dwEVltc1TVb7cC8lPfZ4n?usp=sharing">
+                        Đơn xin đăng ký học phần bổ sung
                     </a></td>
             </tr>
             <tr>

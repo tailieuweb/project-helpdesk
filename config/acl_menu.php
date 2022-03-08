@@ -92,30 +92,6 @@ return [
             "permissions" => [$admin, '_user-editor']
         ],
 
-        //Posts
-        [
-            "name" => "acl-admin.menu.posts",
-            "route" => "posts",
-            "link" => '/admin/posts',
-            "permissions" => [$admin, "_permission-editor"]
-        ],
-
-        //Crawler site
-        [
-            "name" => "acl-admin.menu.sites",
-            "route" => "crawler.site",
-            "link" => '/admin/crawler/site',
-            "permissions" => [$admin, "_permission-editor"]
-        ],
-
-        //Crawler work
-        [
-            "name" => "acl-admin.menu.crawler_works_jobs",
-            "route" => "crawler.work.job",
-            "link" => '/admin/crawler/work/job',
-            "permissions" => [$admin, "_permission-editor"]
-        ],
-
         //Pexcel
         [
             "name" => "acl-admin.menu.pexcel",
@@ -123,13 +99,7 @@ return [
             "link" => '/admin/pexcel',
             "permissions" => [$admin, "_permission-editor"]
         ],
-        // Company
-        [
-            "name" => "acl-admin.menu.company",
-            "route" => "company",
-            "link" => '/admin/company',
-            "permissions" => [$admin]
-        ],
+
         // Course
         [
             "name" => "acl-admin.menu.course",
@@ -143,13 +113,6 @@ return [
             "route" => "teacher.course",
             "link" => '/admin/courses/list',
             "permissions" => [$admin, "_teacher"]
-        ],
-        // Internship
-        [
-            "name" => "acl-admin.menu.internship",
-            "route" => "internship",
-            "link" => '/admin/internship',
-            "permissions" => []
         ],
 
         // Helpdesk

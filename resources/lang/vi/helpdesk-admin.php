@@ -13,7 +13,9 @@ return [
         'top-menu' => 'Companies'
     ],
 
-
+    'descriptions' => [
+        'student_counter' => 'Danh sách sinh viên'
+    ],
 
 
 
@@ -84,6 +86,7 @@ return [
         'answer_description' => 'Answer description',
         'job_name' => 'Job name',
         'category_name' => 'Category name',
+        'course_name' => 'Lớp CVHT',
     ],
 
 

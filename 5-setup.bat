@@ -29,3 +29,6 @@ php artisan vendor:publish --tag=lfm_config
 php artisan vendor:publish --tag=lfm_public
 php artisan migrate
 php artisan db:seed
+
+php artisan vendor:publish --provider="Foostart\Acl\Authentication\AuthenticationServiceProvider" --force
+php artisan vendor:publish --provider="Foostart\Helpdesk\HelpdeskServiceProvider" --force
