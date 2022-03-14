@@ -112,7 +112,7 @@ return [
             "name" => "acl-admin.menu.course",
             "route" => "teacher.course",
             "link" => '/admin/courses/list',
-            "permissions" => [$admin, "_teacher"]
+            "permissions" => [$admin]
         ],
 
         // Helpdesk
@@ -128,9 +128,9 @@ return [
             "name" => "acl-admin.menu.helpdesk",
             "route" => "teacher.helpdesk",
             "link" => '/admin/helpdesk/list',
-            "permissions" => [$admin, "_teacher"]
+            "permissions" => ["_teacher"]
         ],
-        // Internship
+        // View request helpdesk
         [
             "name" => "Request",
             "route" => "student.helpdesk",

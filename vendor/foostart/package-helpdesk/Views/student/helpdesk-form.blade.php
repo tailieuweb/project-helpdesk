@@ -51,7 +51,7 @@
                 'name' => 'helpdesk_name',
                 'label' => trans($plang_admin.'.labels.helpdesk_name'),
                 'value' => @$item->helpdesk_name,
-                'description' => trans($plang_admin.'.descriptions.helpdesk_name'),
+
                 'errors' => $errors,
             ])
             <!--/NAME-->
@@ -63,7 +63,7 @@
                 'ref' => 'helpdesk_name',
                 'label' => trans($plang_admin.'.labels.slug'),
                 'value' => @$item->helpdesk_slug,
-                'description' => trans($plang_admin.'.descriptions.slug'),
+
                 'errors' => $errors,
                 'hidden' => true
             ])
@@ -78,7 +78,7 @@
                         'label' => trans($plang_admin.'.form.category_id'),
                         'value' => @$item->category_id,
                         'items' => $categories,
-                        'description' => trans($plang_admin.'.descriptions.category_id'),
+
                     ])
                     <!--/CATEGORY ID-->
                 </div>
@@ -90,7 +90,7 @@
                         'label' => trans($plang_admin.'.form.status'),
                         'value' => @$item->status,
                         'items' => $status,
-                        'description' => trans($plang_admin.'.descriptions.status'),
+
                     ])
                     <!--/STATUS-->
                 </div>
@@ -101,7 +101,7 @@
                 'name' => 'helpdesk_description',
                 'label' => trans($plang_admin.'.labels.helpdesk_description'),
                 'value' => @$item->helpdesk_description,
-                'description' => trans($plang_admin.'.descriptions.helpdesk_description'),
+
                 'rows' => 25,
                 'tinymce' => true,
                 'errors' => $errors,
@@ -116,7 +116,7 @@
                 'name' => 'files',
                 'label' => trans($plang_admin.'.labels.files'),
                 'value' => @$item->helpdesk_files,
-                'description' => trans($plang_admin.'.descriptions.files'),
+
                 'errors' => $errors,
             ])
             <!--/POST FILES-->

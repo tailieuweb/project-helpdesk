@@ -10,15 +10,7 @@ $withs = [
 ?>
 
 @if(!empty($courses) && (!$courses->isEmpty()) )
-    <div style="min-height: 50px;">
-        <div>
-            @if($courses->total() == 1)
-                {!! trans($plang_admin.'.descriptions.course_counter', ['number' => 1]) !!}
-            @else
-                {!! trans($plang_admin.'.descriptions.course_counters', ['number' => $courses->total()]) !!}
-            @endif
-        </div>
-    </div>
+
 
     <div class="table-responsive">
     <table class="table table-hover">

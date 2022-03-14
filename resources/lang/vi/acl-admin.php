@@ -10,6 +10,7 @@ return [
      */
     'breadcrumbs' => [
         'admin' => 'Admin',
+        'student' => 'Student',
         'helpdesk' => 'Helpdesk',
         'teacher' => 'Teacher',
         'view' => 'View',

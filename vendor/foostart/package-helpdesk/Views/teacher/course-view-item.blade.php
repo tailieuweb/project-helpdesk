@@ -12,16 +12,6 @@ $withs = [
 ?>
 
 @if(!empty($items))
-    <div style="min-height: 50px;">
-        <div>
-            @if(count($items) == 1)
-                {!! trans($plang_admin.'.descriptions.student_counter', ['number' => 1]) !!}
-            @else
-                {!! trans($plang_admin.'.descriptions.student_counter', ['number' => count($items)]) !!}
-            @endif
-        </div>
-
-    </div>
 
     <div class="table-responsive">
     <table class="table table-hover">
@@ -116,7 +106,7 @@ $withs = [
                     <!--STATUS-->
                     <td style="text-align: center;">
 
-                        @if(isset($item['company_name']) && (isset($config_status['list'][99])))
+                        @if($item['status'] == 99)
                             <i class="fa fa-circle" style="color:{!! $config_status['color'][99] !!}" title='{!! $config_status["list"][99] !!}'></i>
                         @else
                             <i class="fa fa-circle-o red" title='{!! trans($plang_admin.".labels.unknown") !!}'></i>

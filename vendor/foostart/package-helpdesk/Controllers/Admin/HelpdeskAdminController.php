@@ -615,11 +615,31 @@ class HelpdeskAdminController extends FooController {
             }
         }
 
+        //Get status request
+
+        for ($i = 0; $i < count($items); $i++) {
+            $params = [
+                'created_user_id' => $items[$i]['user_id'],
+                'diff_status' => 99
+            ];
+
+            $request = $this->obj_item->selectItems($params);
+
+            if ($request->total() == 0) {
+                $items[$i]['status'] = 99;
+            } else {
+                $items[$i]['status'] = 55;
+            }
+        }
+
+
+
         // display view
         $this->data_view = array_merge($this->data_view, array(
             'item' => $item,
             'items' => $items,
             'request' => $request,
+            'config_status' => $this->obj_item->config_status
 
         ));
 

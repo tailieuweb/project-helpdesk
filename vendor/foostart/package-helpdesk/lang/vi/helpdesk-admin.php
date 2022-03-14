@@ -65,6 +65,11 @@ return [
         'id' => 'Id',
         'name' => 'Crawler name',
         'operations' => 'Operations',
+        'user_name' => 'MSSV',
+        'first_name' => 'Họ',
+        'last_name' => 'Tên',
+        'phone' => 'Phone',
+        'teacher_view_student' => 'Xem request',
         'updated_at' => 'Updated at',
         'filename' => 'File name',
         'status'    => 'Status',
@@ -99,6 +104,9 @@ return [
     */
     'pages' => [
         'title-list' => 'List of requests',
+        'title-courses' => 'Danh sách sinh viên',
+        'list-search-courses' => 'Danh sách sinh viên',
+        'title_courses' => 'Danh sách lớp',
         'title-list-pattern' => 'List of patterns',
         'title-list-search' => 'Search results',
         'title-list-pattern-search' => 'Search results',
@@ -126,6 +134,7 @@ return [
         'title-edit-category' => 'Edit category',
         'title-categories' => 'List of categories',
         'title-list-pattern' => 'List of patterns',
+        'title-list-search-courses' => 'Danh sách sinh viên',
 
     ],
 
@@ -192,6 +201,7 @@ return [
     */
     'descriptions' => [
         'form' => 'Crawler form',
+        'course_counter' => 'Crawler form',
         'update' => 'Update crawler',
         'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
         'category' => 'Click <a href=":href">here</a> to manage list of categories by token.',
@@ -320,6 +330,7 @@ return [
     */
     'labels' => [
         'name' => 'Crawler name',
+        'title-search-courses' => 'Tìm kiếm request',
         'overview' => 'Crawler overview',
         'description' => 'Crawler description',
         'image' => 'Crawler image',

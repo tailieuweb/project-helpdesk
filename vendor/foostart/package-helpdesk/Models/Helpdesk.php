@@ -85,13 +85,15 @@ class Helpdesk extends FooModel {
             'helpdesk_name',
             'updated_at',
             $this->field_status,
-            'created_user_id'
+            'created_user_id',
+            'diff_status'
         ];
         //check valid fields for filter
         $this->valid_filter_fields = [
             'keyword',
             'status',
-            'created_user_id'
+            'created_user_id',
+            'diff_status'
         ];
 
         //primary key
@@ -180,6 +182,11 @@ class Helpdesk extends FooModel {
                         case 'helpdesk_name':
                             if (!empty($value)) {
                                 $elo = $elo->where($this->table . '.helpdesk_name', '=', $value);
+                            }
+                            break;
+                        case 'diff_status':
+                            if (!empty($value)) {
+                                $elo = $elo->where($this->table . '.status', '!=', $value);
                             }
                             break;
 

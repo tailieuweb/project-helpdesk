@@ -122,12 +122,8 @@ View::composer([
      * $sidebar_items
      */
     $sidebar_items = [
-        trans('helpdesk-admin.sidebar.add') => [
-            'url' => URL::route('helpdesk.edit', []),
-            'icon' => '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'
-        ],
         trans('helpdesk-admin.sidebar.list_helpdesk') => [
-            "url" => URL::route('helpdesk', []),
+            "url" => URL::route('teacher.helpdesk', []),
             'icon' => '<i class="fa fa-list-ul" aria-hidden="true"></i>'
         ],
     ];
