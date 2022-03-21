@@ -15,7 +15,9 @@
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Hướng dẫn sinh viên thực hiện các mẫu đơn</th>
+                <td><a href="https://docs.google.com/spreadsheets/d/1C4osBDQ4vADu_iGNOnPsWjVBI-Vn2mlCwU7pf7GPHlc/edit?usp=sharing">
+                        Hướng dẫn SV thực hiện các mẫu đơn
+                    </a></td>
             </tr>
             </thead>
             <tbody>
@@ -27,13 +29,13 @@
             </tr>
             <tr>
                 <th scope="row">2</th>
-                <td><a href="https://drive.google.com/drive/folders/11JH_bLiEdd6dwEVltc1TVb7cC8lPfZ4n?usp=sharing">
+                <td><a href="https://docs.google.com/document/d/12C4gIN_6DrLFqGfOOSsGpcs1i0VgM7ODFttOrFT_oL4/edit?usp=sharing">
                         Đơn xin rút học phần
                     </a></td>
             </tr>
             <tr>
                 <th scope="row">3</th>
-                <td><a href="https://drive.google.com/drive/folders/11JH_bLiEdd6dwEVltc1TVb7cC8lPfZ4n?usp=sharing">
+                <td><a href="https://docs.google.com/document/d/1SSX8S9MuVbdfDXyGpDg5JaKYs85jfk1r68OFGLJROko/edit?usp=sharing">
                         Đơn xin đăng ký học phần bổ sung
                     </a></td>
             </tr>
