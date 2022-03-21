@@ -32,13 +32,13 @@
                     </a></td>
             </tr>
             <tr>
-                <th scope="row">2</th>
+                <th scope="row">3</th>
                 <td><a href="https://drive.google.com/drive/folders/11JH_bLiEdd6dwEVltc1TVb7cC8lPfZ4n?usp=sharing">
                         Đơn xin đăng ký học phần bổ sung
                     </a></td>
             </tr>
             <tr>
-                <th scope="row">3</th>
+                <th scope="row">4</th>
                 <td><a href="https://docs.google.com/spreadsheets/d/1thn1xTb76Y0eyGMw-7qFCNCuwlU03LM26agJfNq5n5k/edit?usp=sharing">
                         Gặp vấn đề, sự cố cần hỗ trợ
                     </a></td>
