@@ -1,0 +1,1260 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head><link rel="icon" href="favicon.ico" type="image/x-icon" /><title>
+	TDC Portal :: Trường Cao Đẳng Công Nghệ Thủ Đức
+</title><meta name="Keywords" content="Trường Cao Đẳng Công Nghệ Thủ Đức" /><link href="Default.css" rel="stylesheet" type="text/css" /><link href="Images/main.css" rel="stylesheet" type="text/css" /><link href="Portlets/UIS_MySpace/Images/Reports.css" rel="stylesheet" type="text/css" />
+    <script src="common.js" type="text/javascript"></script>
+    <script src="actb.js" type="text/javascript"></script>
+    <script src="/jquery-2.1.0.min.js"></script>
+    <script language="javascript" type="text/javascript">
+        function GetHttpRequestObject() {
+            var xmlHttpObject;
+            try {
+                xmlHttpObject = new XMLHttpRequest();
+            }
+            catch (e) {
+                try {
+                    xmlHttpObject = new ActiveXObject("Msxml2.XMLHTTP");
+                }
+                catch (e) {
+                    try {
+                        xmlHttpObject = new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                    catch (e) {
+                        alert("Your browser doesn't support ajax");
+                    }
+                }
+            }
+            return xmlHttpObject;
+        }
+
+
+        function GetHttpRequest() {
+            var xmlHttp;
+            try {
+                xmlHttp = new XMLHttpRequest();
+            }
+            catch (e) {
+                try {
+                    xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+                }
+                catch (e) {
+                    try {
+                        xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+                    }
+                    catch (e) {
+                        alert("Your browser doesn't support ajax");
+                    }
+                }
+            }
+            return xmlHttp;
+        }
+        function OpenWindowHelp(objURL)
+        {
+ 	        var test = window.open(objURL, "Window", "status=0, toolbar=0, menubar=0, directories =0, resizable=1, width=650, height=600,scrollbars=yes, location=0, Window.moveTo(100,100);");
+        }
+    </script>
+
+</head>
+<body class="body" topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0" >
+
+<div align="center">
+<form method="post" action="./" id="frm">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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b2FjdXRlO2EgS2gmb2FjdXRlO2EgVGhpIE5nJmFncmF2ZTt5IDA2XzA3LzAzLzIwMjMmbmJzcDsoVHJ1bmcgQ+G6pXApPC9wPg0KPHA+Jm5ic3A7LSBNJm9jaXJjO24gOiZuYnNwOzwvcD4NCjxwPiZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyArIFRvJmFhY3V0ZTtuIChQXzAxKTombmJzcDs8YSBocmVmPSIvaW1nLzIwMTkvVGglQzMlQjRuZyUyMHRpbiUyMHQlRTElQkIlOTF0JTIwbmdoaSVFMSVCQiU4N3AvZmlsZS9EaWVuJTIwVGhpJTIwVE4vVGhhbmclMjAwM18yMDIzL1RvYW5fUF8wMS5wZGYiPkNoaSB0aeG6v3Q8L2E+PC9wPg0KPHA+Jm5ic3A7ICZuYnNwOyAmbmJzcDsgJm5ic3A7ICsgTCZ5YWN1dGU7IChQXzAyKTombmJzcDs8YSBocmVmPSIvaW1nLzIwMTkvVGglQzMlQjRuZyUyMHRpbiUyMHQlRTElQkIlOTF0JTIwbmdoaSVFMSVCQiU4N3AvZmlsZS9EaWVuJTIwVGhpJTIwVE4vVGhhbmclMjAwM18yMDIzL0x5X1BfMDIucGRmIj5DaGkgdGnhur90PC9hPjwvcD4NCjxwPiZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyArIEgmb2FjdXRlO2EgKFBfMDMpOiZuYnNwOzxhIGhyZWY9Ii9pbWcvMjAxOS9UaCVDMyVCNG5nJTIwdGluJTIwdCVFMSVCQiU5MXQlMjBuZ2hpJUUxJUJCJTg3cC9maWxlL0RpZW4lMjBUaGklMjBUTi9UaGFuZyUyMDAzXzIwMjMvSG9hX1BfMDMucGRmIj5DaGkgdGnhur90PC9hPjwvcD4NCjxwPiZuYnNwOyAmbmJzcDsgJm5ic3A7ICZuYnNwOyArIEzhu4tjaCBT4butIChQXzA0KTombmJzcDs8YSBocmVmPSIvaW1nLzIwMTkvVGglQzMlQjRuZyUyMHRpbiUyMHQlRTElQkIlOTF0JTIwbmdoaSVFMSVCQiU4N3AvZmlsZS9EaWVuJTIwVGhpJTIwVE4vVGhhbmclMjAwM18yMDIzL0xpY2glMjBTdV9QXzA0LnBkZiI+Q2hpIHRp4bq/dDwvYT48L3A+DQo8cD4t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IEjDuW5nIFbGsMahbmcgdsOgIEzhu4UgMzAvMDQtMDEvMDUgbsSDbSAyMDIzZAIFD2QWAmYPFQIFNDQxNDVaVGjDtG5nIGLDoW8gdi92IG7hu5lwIGjhu5Mgc8ahIG1p4buFbiwgZ2nhuqNtIGjhu41jIHBow60gaOG7jWMga+G7syAyIG7Eg20gaOG7jWMgMjAyMi0yMDIzZAIGD2QWAmYPFQIFNDQxNDSkAVRow7RuZyBiw6FvIHYvdiBjw7RuZyBi4buRIGRhbmggc8OhY2ggSFNTViDEkeG7pyDEkWnhu4F1IGtp4buHbiDEkcaw4bujYyDEkeG7gSBuZ2jhu4sgeMOpdCBo4buNYyBi4buVbmcga2h1eeG6v24ga2jDrWNoIGjhu41jIHThuq1wIGjhu41jIGvDrCAyIG7Eg20gaOG7jWMgMjAyMS0yMDIyZAIHD2QWAmYPFQIFNDQxNDNGRGFuaCBzw6FjaCBob8OgbiB0cuG6oyB0aeG7gW4gQuG6o28gaGnhu4NtIHkgdOG6vyBuxINtIGjhu41jIDIwMjItMjAyM2QCCA9kFgJmDxUCBTQ0MTQyhAFRdXnhur90IMSR4buLbmggdi92IGPDtG5nIG5o4bqtbiBr4bq/dCBxdeG6oyByw6huIGx1eeG7h24gc2luaCB2acOqbiBi4bqtYyBDYW8gxJHhurNuZyAoYuG7lSBzdW5nKSBI4buNYyBr4buzIDIgbsSDbSBo4buNYyAyMDIxLTIwMjJkAgkPZBYCZg8VAgU0NDE0MF5UaMO0bmcgYsOhbyB2L3YgbuG7mXAgaOG7kyBzxqEgeMOpdCBo4buNYyBi4buVbmcgdsaw4bujdCBraMOzLCBuxINtIGjhu41jIDIwMjItMjAyMyAoxJHhu6N0IDIpZAIPDzwrAAkBAA8WBB8HFgAfAWZkZAITDxYCHwAF8gM8dGFibGUgYm9yZGVyPScwJyB3aWR0aD0nMTAwJScgaWQ9J3RhYmxlMTgzJyBjZWxscGFkZGluZz0nMic+PHRyPjx0ZD48Zm9udCBmYWNlPSdBcmlhbCcgc3R5bGU9J2ZvbnQtc2l6ZTogOC41cHQnIGNvbG9yPScjNzM3MzczJz48c3BhbiBpZD0nY3RsMDBfQ29weXJpZ2h0Jz5Db3B5cmlnaHQgwqkgMjAxMSBUREMgLSBBbGwgUmlnaHRzIFJlc2VydmVkPC9zcGFuPjwvZm9udD48L3RkPjx0ZD48cCBhbGlnbj0ncmlnaHQnPjxmb250IGZhY2U9J0FyaWFsJyBzdHlsZT0nZm9udC1zaXplOiA4LjVwdCc+PHNwYW4gaWQ9J2N0bDAwX0xhYmVsMSc+PGZvbnQgY29sb3I9JyM3MzczNzMnPlBvd2VyZWQgYW5kIERlc2lnbmVkIGJ5IDwvZm9udD48YSB0YXJnZXQ9J19ibGFuaycgaHJlZj0naHR0cDovL3d3dy5wc2N0ZWxlY29tLmNvbS52bic+PGZvbnQgY29sb3I9JyM3MzczNzMnPlBTQyBWaSYjNzg3OTt0IE5hbTwvZm9udD48L2E+PC9zcGFuPjwvZm9udD48L3RkPjwvdHI+PC90YWJsZT5kGAEFPmN0bDAwJENvbnRlbnRQbGFjZUhvbGRlcjEkY3RsMDAkY3RsMDAkY3RsMDAkY3RsMDAkZ3J2TmV3c2dyb3VwDzwrAAwBCAI2ZDXYSzy6pvAXMriba4wow8rBXhOeUZAUEoAg5yFK1e7R" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdADiffFQv/TwOk8KlBTAsyIt9IwN8rqZLeuQyOTNwQC1khDoXWt5CPLzhYN2udOeJ8Bh8R6sr6Qn4Wo5kZbTn7xEYYZN0B/7ug/21OCHsBfMtx06sLHmXCVBDxGwxPkeghp4JTfykuKVC4z/vr0cw7EqYNnScdgARj6IlmU+0jSO+hZiDUd1Eqv2Bi0N+NBjutWVCpn0qulBD+DzTw2ueCaV7o1lrHU+hORXje0tNxtR57S9/o3eoyHyY7xeXAIZBauIVMQTXuRR2tBCRmeQtbNCUib0uXDfzYCTIXhIczqyTQvFdxLC+qWszzFCeX4N5k+90dcqcVIZ3gynBkSYFVE61cq4zAjhhiwP16XlW1HU5XdIg1AfgqJBegxClplyOsU93SH7j6xgtTPQDp/zC86YNGBYMQ1ubtThK34BhJEj2hZgrNqW8wgudVer2j6Mb/1KSf8WjSZ8djpn0ndVaI5v/eeq1oTuM0wqwUwJfBlInuoe06ACHdEp/EUDLCOf+cf0UFOKXcu5ZIXmpO+9NP7Ilc0csEwjuMehj6uvqMTbGMGuAIwghqcN1CEuUXe8MhnkSKjrLcwXmt7/PMI0g9Cpoj/JgutBgjC70R84zNVznGien4V9qkSnEVhNzucaaNBb38vXSRZkaFg1CYzQRyoQT4dVAja+Hv5bw565cArPT8T2kxsbJk3bg93goq9Yl0Q43jXHOOvlDb7u+s7ns8TIGXjofJZ0WvQcKpEVtRroX6nFrHJuKA1OMSU/AV1JTbRjpdS5j7OFQWgeLagD39zId6m+eaDJz0nBNMCSFUG+gD3Ufngwmoj7+FJSjfYw2R+Dh/eAvWSiXWsHDgSDUmDnW+ub9LVV+UY/b5GWF9wOgXLjYCG8A+lhSNI83JzUYisG01qZfIXZLWCnEeYiMb/beJ3FTK/tcWnWA+JyDGe0R8OZm+dfu+IB27bpOXHR1sLymvkqxmj2q/pVAkyeAr2N4RXqfnqIi5SOjvtg0VbiIvt4BEkGKeH8S/BIzG7eFozDQGC04jGJBi6h7c0D2H2TqT8WaRBPa4iRJv0wERU3Z6NzVLvGcxuSQzWGKQR4nK0xNr6O0D5PKzCqgZEKHmTU2Rn6XFSSjhjCAlVhuzskRTY2pZkk3gbWxy63lbxz7UTKCE04N08I79+FlaxbExxYkGr/5c9Akn1eazxqtai6nyHUJEzfI7eHv548uRmzwOjdw2D2ETMHAZmmQP0Hw/jmh" />
+	<table border="0" width="1002" id="table1" cellspacing="0" cellpadding="0">
+		<tr>
+			<td height="24">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>
+			    <img border="0" src="Portlets/UIS_MySpace/Images/TDC.jpg" height="143" style="width: 1002px"/>
+			</td>
+		</tr>
+		<tr>
+			<td height="31" valign="bottom">
+			<table border="0" width="100%" id="table2" cellspacing="0" cellpadding="0">
+				<tr>
+					<td height="31">
+					<div align="right">
+						<table border="0" width="650" id="table5" cellspacing="0" cellpadding="0">
+							<tr>
+								<td align="center">
+								    <a id="lbtHome" class="menutop" href="javascript:__doPostBack(&#39;ctl00$lbtHome&#39;,&#39;&#39;)">Trang chủ</a>
+								</td>
+								<td align="center">
+								    <img border="0" src="images/line_menu_ver.gif" width="1" height="30" />
+								</td>
+								<td align="center">
+								    <a id="lbtBranch" class="menutop" href="javascript:__doPostBack(&#39;ctl00$lbtBranch&#39;,&#39;&#39;)">Chương trình đào tạo</a>
+								</td>
+								
+								<td align="center">
+								    <img border="0" src="images/line_menu_ver.gif" width="1" height="30" />
+								</td>
+								<td align="center">
+								    <a id="lbtText" class="menutop" href="javascript:__doPostBack(&#39;ctl00$lbtText&#39;,&#39;&#39;)">Văn bản</a>
+								</td>
+								<td align="center" style="display:none">
+								    <img border="0" src="images/line_menu_ver.gif" width="1" height="30" />
+								</td>
+								<td align="center" style="display:none">
+								    <a id="lbtTuyensinh" class="menutop" href="javascript:__doPostBack(&#39;ctl00$lbtTuyensinh&#39;,&#39;&#39;)">Tuyển sinh</a>
+								</td>
+								<td align="center" >
+								    <img border="0" src="images/line_menu_ver.gif" width="1" height="30" />
+								</td>
+								<td align="center" >
+								    <a id="lbtTotnghiep" class="menutop" href="javascript:__doPostBack(&#39;ctl00$lbtTotnghiep&#39;,&#39;&#39;)">Tra cứu Văn bằng</a>
+								</td>
+								<td align="center">
+								    <img border="0" src="images/line_menu_ver.gif" width="1" height="30" />
+								</td>
+								<td align="center" onclick="javascript:OpenWindowHelp('Portlets/UIS_MySpace/Student/UIS_Help.htm')">
+								    <a id="lbtHelp" class="menutop" href="javascript:__doPostBack(&#39;ctl00$lbtHelp&#39;,&#39;&#39;)">Hướng dẫn</a>
+								</td>
+								<td align="center" >
+								    <img border="0" src="images/line_menu_ver.gif" width="1" height="30" />
+								</td>
+                                <td align="center" >
+                                     <a id="Aebill" class="menutop" href="javascript:__doPostBack(&#39;ctl00$Aebill&#39;,&#39;&#39;)">Đóng học phí</a>
+								</td>
+								<td align="center">
+								    <img border="0" src="images/line_menu_ver.gif" width="1" height="30" />
+								</td>
+								<td align="center" width="120">&nbsp;</td>
+							</tr>
+						</table>
+					</div>
+					</td>
+					<td width="200" valign="bottom" >
+					    <table cellpadding="0" cellspacing="0" class="menutop">
+					        <tr class="menutop">
+					            <td>
+					                <img border="0" src="images/left_b_login.gif" width="5" height="25" />
+					            </td>
+					            <td background="images/bg_b_login.gif" class="menutop">
+					            <a id="lbtDangnhap" class="menutop" href="javascript:__doPostBack(&#39;ctl00$lbtDangnhap&#39;,&#39;&#39;)">Đăng nhập</a>
+					            </td>
+					            <td>
+					                <img border="0" src="images/right_b_login.gif" width="5" height="25" />
+					            </td>
+					        </tr>
+					    </table>
+					
+					</td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>
+			<table border="0" width="100%" id="table6" cellspacing="0" cellpadding="0">
+				<tr>
+					<td width="10" height="300">&nbsp;</td>
+					<td>
+					    
+    
+<table border="0" width="100%" id="table7" cellspacing="0" cellpadding="0">
+	<tr>
+		<td>
+		<table border="0" width="100%" id="table8" cellspacing="0" cellpadding="0">
+			<tr>
+				<td width="200px" valign="top">
+				<table border="0" width="100%" id="table9" cellspacing="0" cellpadding="0">
+					<tr>
+						<td>
+						<img border="0" src="images/top_fr_left.gif" width="223" height="5" /></td>
+					</tr>
+					<tr>
+						<td background="images/bg_fr_left.gif">
+						<table border="0" width="100%" id="table12" cellspacing="0" cellpadding="0">
+							<tr>
+								<td height="37">
+								<table border="0" width="100%" id="table14" cellspacing="0" cellpadding="0">
+									<tr>
+										<td width="42" class=title>
+										<p align="center">
+										<img border="0" src="images/rss.png" width="24" height="24" /></td>
+										<td class="title">TIN T&#7912;C</td>
+									</tr>
+								</table>
+								</td>
+							</tr>
+							<tr>
+								<td bgcolor="#e3ebef">
+								<img border="0" src="images/dot.gif" width="1" height="1">
+								</td>
+							</tr>
+						    
+                                <tr>
+						            <td height="15">
+                                    <div align="center">
+							            <table border="0" width="96%" id="table178" cellpadding="3" cellspacing="3">
+								            <tr>
+									            <td height="15" class="title">
+									            <p align="justify">
+									            <img border="0" src="images/icon_orange.gif" width="4" height="4" />&nbsp; 
+									            <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_rptInfo_lbtNewsManager_0" class="title" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$rptInfo$ctl00$lbtNewsManager&#39;,&#39;&#39;)">Sổ tay Sinh viên</a>
+									            </td>
+								            </tr>
+							            </table>
+						            </div>
+                                </td>
+					            </tr>
+					            <tr>
+						            <td bgcolor="#e3ebef">
+						            <img border="0" src="images/dot.gif" width="1" height="1"></td>
+					            </tr>
+                                
+                                <tr>
+						            <td height="15">
+                                    <div align="center">
+							            <table border="0" width="96%" id="table178" cellpadding="3" cellspacing="3">
+								            <tr>
+									            <td height="15" class="title">
+									            <p align="justify">
+									            <img border="0" src="images/icon_orange.gif" width="4" height="4" />&nbsp; 
+									            <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_rptInfo_lbtNewsManager_1" class="title" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$rptInfo$ctl01$lbtNewsManager&#39;,&#39;&#39;)">Thông báo chung</a>
+									            </td>
+								            </tr>
+							            </table>
+						            </div>
+                                </td>
+					            </tr>
+					            <tr>
+						            <td bgcolor="#e3ebef">
+						            <img border="0" src="images/dot.gif" width="1" height="1"></td>
+					            </tr>
+                                
+                                <tr>
+						            <td height="15">
+                                    <div align="center">
+							            <table border="0" width="96%" id="table178" cellpadding="3" cellspacing="3">
+								            <tr>
+									            <td height="15" class="title">
+									            <p align="justify">
+									            <img border="0" src="images/icon_orange.gif" width="4" height="4" />&nbsp; 
+									            <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_rptInfo_lbtNewsManager_2" class="title" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$rptInfo$ctl02$lbtNewsManager&#39;,&#39;&#39;)">Thông báo đăng ký học phần</a>
+									            </td>
+								            </tr>
+							            </table>
+						            </div>
+                                </td>
+					            </tr>
+					            <tr>
+						            <td bgcolor="#e3ebef">
+						            <img border="0" src="images/dot.gif" width="1" height="1"></td>
+					            </tr>
+                                
+                                <tr>
+						            <td height="15">
+                                    <div align="center">
+							            <table border="0" width="96%" id="table178" cellpadding="3" cellspacing="3">
+								            <tr>
+									            <td height="15" class="title">
+									            <p align="justify">
+									            <img border="0" src="images/icon_orange.gif" width="4" height="4" />&nbsp; 
+									            <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_rptInfo_lbtNewsManager_3" class="title" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$rptInfo$ctl03$lbtNewsManager&#39;,&#39;&#39;)">Thông báo Bảo hiểm y tế</a>
+									            </td>
+								            </tr>
+							            </table>
+						            </div>
+                                </td>
+					            </tr>
+					            <tr>
+						            <td bgcolor="#e3ebef">
+						            <img border="0" src="images/dot.gif" width="1" height="1"></td>
+					            </tr>
+                                
+                                <tr>
+						            <td height="15">
+                                    <div align="center">
+							            <table border="0" width="96%" id="table178" cellpadding="3" cellspacing="3">
+								            <tr>
+									            <td height="15" class="title">
+									            <p align="justify">
+									            <img border="0" src="images/icon_orange.gif" width="4" height="4" />&nbsp; 
+									            <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_rptInfo_lbtNewsManager_4" class="title" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$rptInfo$ctl04$lbtNewsManager&#39;,&#39;&#39;)">Thông báo Học phí - Lệ phí</a>
+									            </td>
+								            </tr>
+							            </table>
+						            </div>
+                                </td>
+					            </tr>
+					            <tr>
+						            <td bgcolor="#e3ebef">
+						            <img border="0" src="images/dot.gif" width="1" height="1"></td>
+					            </tr>
+                                
+                                <tr>
+						            <td height="15">
+                                    <div align="center">
+							            <table border="0" width="96%" id="table178" cellpadding="3" cellspacing="3">
+								            <tr>
+									            <td height="15" class="title">
+									            <p align="justify">
+									            <img border="0" src="images/icon_orange.gif" width="4" height="4" />&nbsp; 
+									            <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_rptInfo_lbtNewsManager_5" class="title" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$rptInfo$ctl05$lbtNewsManager&#39;,&#39;&#39;)">Đăng ký làm giấy xác nhận HSSV</a>
+									            </td>
+								            </tr>
+							            </table>
+						            </div>
+                                </td>
+					            </tr>
+					            <tr>
+						            <td bgcolor="#e3ebef">
+						            <img border="0" src="images/dot.gif" width="1" height="1"></td>
+					            </tr>
+                                
+                                <tr>
+						            <td height="15">
+                                    <div align="center">
+							            <table border="0" width="96%" id="table178" cellpadding="3" cellspacing="3">
+								            <tr>
+									            <td height="15" class="title">
+									            <p align="justify">
+									            <img border="0" src="images/icon_orange.gif" width="4" height="4" />&nbsp; 
+									            <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_rptInfo_lbtNewsManager_6" class="title" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$rptInfo$ctl06$lbtNewsManager&#39;,&#39;&#39;)">Học bổng-Khen thưởng-Kỷ luật</a>
+									            </td>
+								            </tr>
+							            </table>
+						            </div>
+                                </td>
+					            </tr>
+					            <tr>
+						            <td bgcolor="#e3ebef">
+						            <img border="0" src="images/dot.gif" width="1" height="1"></td>
+					            </tr>
+                                
+                                <tr>
+						            <td height="15">
+                                    <div align="center">
+							            <table border="0" width="96%" id="table178" cellpadding="3" cellspacing="3">
+								            <tr>
+									            <td height="15" class="title">
+									            <p align="justify">
+									            <img border="0" src="images/icon_orange.gif" width="4" height="4" />&nbsp; 
+									            <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_rptInfo_lbtNewsManager_7" class="title" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$rptInfo$ctl07$lbtNewsManager&#39;,&#39;&#39;)">Chuẩn đầu ra</a>
+									            </td>
+								            </tr>
+							            </table>
+						            </div>
+                                </td>
+					            </tr>
+					            <tr>
+						            <td bgcolor="#e3ebef">
+						            <img border="0" src="images/dot.gif" width="1" height="1"></td>
+					            </tr>
+                                
+                                <tr>
+						            <td height="15">
+                                    <div align="center">
+							            <table border="0" width="96%" id="table178" cellpadding="3" cellspacing="3">
+								            <tr>
+									            <td height="15" class="title">
+									            <p align="justify">
+									            <img border="0" src="images/icon_orange.gif" width="4" height="4" />&nbsp; 
+									            <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_rptInfo_lbtNewsManager_8" class="title" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$rptInfo$ctl08$lbtNewsManager&#39;,&#39;&#39;)">Công khai điều kiện đảm bảo tổ chức hoạt động GDNN</a>
+									            </td>
+								            </tr>
+							            </table>
+						            </div>
+                                </td>
+					            </tr>
+					            <tr>
+						            <td bgcolor="#e3ebef">
+						            <img border="0" src="images/dot.gif" width="1" height="1"></td>
+					            </tr>
+                                
+                                <tr>
+						            <td height="15">
+                                    <div align="center">
+							            <table border="0" width="96%" id="table178" cellpadding="3" cellspacing="3">
+								            <tr>
+									            <td height="15" class="title">
+									            <p align="justify">
+									            <img border="0" src="images/icon_orange.gif" width="4" height="4" />&nbsp; 
+									            <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_rptInfo_lbtNewsManager_9" class="title" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$rptInfo$ctl09$lbtNewsManager&#39;,&#39;&#39;)">Thông báo miễn, giảm học phí</a>
+									            </td>
+								            </tr>
+							            </table>
+						            </div>
+                                </td>
+					            </tr>
+					            <tr>
+						            <td bgcolor="#e3ebef">
+						            <img border="0" src="images/dot.gif" width="1" height="1"></td>
+					            </tr>
+                                
+                                <tr>
+						            <td height="15">
+                                    <div align="center">
+							            <table border="0" width="96%" id="table178" cellpadding="3" cellspacing="3">
+								            <tr>
+									            <td height="15" class="title">
+									            <p align="justify">
+									            <img border="0" src="images/icon_orange.gif" width="4" height="4" />&nbsp; 
+									            <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_rptInfo_lbtNewsManager_10" class="title" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$rptInfo$ctl10$lbtNewsManager&#39;,&#39;&#39;)">Thông báo Nghiên cứu khoa học</a>
+									            </td>
+								            </tr>
+							            </table>
+						            </div>
+                                </td>
+					            </tr>
+					            <tr>
+						            <td bgcolor="#e3ebef">
+						            <img border="0" src="images/dot.gif" width="1" height="1"></td>
+					            </tr>
+                                
+                                <tr>
+						            <td height="15">
+                                    <div align="center">
+							            <table border="0" width="96%" id="table178" cellpadding="3" cellspacing="3">
+								            <tr>
+									            <td height="15" class="title">
+									            <p align="justify">
+									            <img border="0" src="images/icon_orange.gif" width="4" height="4" />&nbsp; 
+									            <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_rptInfo_lbtNewsManager_11" class="title" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$rptInfo$ctl11$lbtNewsManager&#39;,&#39;&#39;)">Lịch thi kết thúc học phần</a>
+									            </td>
+								            </tr>
+							            </table>
+						            </div>
+                                </td>
+					            </tr>
+					            <tr>
+						            <td bgcolor="#e3ebef">
+						            <img border="0" src="images/dot.gif" width="1" height="1"></td>
+					            </tr>
+                                
+                                <tr>
+						            <td height="15">
+                                    <div align="center">
+							            <table border="0" width="96%" id="table178" cellpadding="3" cellspacing="3">
+								            <tr>
+									            <td height="15" class="title">
+									            <p align="justify">
+									            <img border="0" src="images/icon_orange.gif" width="4" height="4" />&nbsp; 
+									            <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_rptInfo_lbtNewsManager_12" class="title" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$rptInfo$ctl12$lbtNewsManager&#39;,&#39;&#39;)">Thông tin tốt nghiệp</a>
+									            </td>
+								            </tr>
+							            </table>
+						            </div>
+                                </td>
+					            </tr>
+					            <tr>
+						            <td bgcolor="#e3ebef">
+						            <img border="0" src="images/dot.gif" width="1" height="1"></td>
+					            </tr>
+                                
+                                <tr>
+						            <td height="15">
+                                    <div align="center">
+							            <table border="0" width="96%" id="table178" cellpadding="3" cellspacing="3">
+								            <tr>
+									            <td height="15" class="title">
+									            <p align="justify">
+									            <img border="0" src="images/icon_orange.gif" width="4" height="4" />&nbsp; 
+									            <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_rptInfo_lbtNewsManager_13" class="title" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$rptInfo$ctl13$lbtNewsManager&#39;,&#39;&#39;)">Thông Báo đào tạo các lớp buổi tối</a>
+									            </td>
+								            </tr>
+							            </table>
+						            </div>
+                                </td>
+					            </tr>
+					            <tr>
+						            <td bgcolor="#e3ebef">
+						            <img border="0" src="images/dot.gif" width="1" height="1"></td>
+					            </tr>
+                                
+                                <tr>
+						            <td height="15">
+                                    <div align="center">
+							            <table border="0" width="96%" id="table178" cellpadding="3" cellspacing="3">
+								            <tr>
+									            <td height="15" class="title">
+									            <p align="justify">
+									            <img border="0" src="images/icon_orange.gif" width="4" height="4" />&nbsp; 
+									            <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_rptInfo_lbtNewsManager_14" class="title" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$rptInfo$ctl14$lbtNewsManager&#39;,&#39;&#39;)">Biểu mẫu</a>
+									            </td>
+								            </tr>
+							            </table>
+						            </div>
+                                </td>
+					            </tr>
+					            <tr>
+						            <td bgcolor="#e3ebef">
+						            <img border="0" src="images/dot.gif" width="1" height="1"></td>
+					            </tr>
+                                
+							
+				            </tr>
+				            <tr>
+					            <td bgcolor="#e3ebef">
+					            <img border="0" src="images/dot.gif" width="1" height="1"></td>
+				            </tr>
+						</table>
+						</td>
+					</tr>
+					<tr>
+						<td>
+						<img border="0" src="images/bottom_fr_left.gif" width="223" height="5">
+					    </td>
+					</tr>
+					<tr>
+						<td>
+						&nbsp;
+					    </td>
+					</tr>
+					<tr>
+						<td style="height: 19px">
+						<div align="center">
+                            
+<table border="0" width="92%" id="table182" cellspacing="0" cellpadding="0">
+    <tr>
+	    <td height="25" >
+	    <b>
+	    <font face="Tahoma" style="font-size: 8.5pt" color="#696969">
+	    Lượt truy cập:&nbsp;&nbsp; <span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_Online1_lblTotal">478721</span>
+	    </font></b></td>
+    </tr>
+    <tr>
+    <td height="1" bgcolor="#dbdbdb">
+    <b>
+    <font face="Tahoma" style="font-size: 8.5pt" color="#696969">
+    <img border="0" src="../../images/dot.gif" width="1" height="1"></font></b></td>
+    </tr>
+    <tr>
+	    <td height="25" class=thuvien>
+	    <b>
+	    <font face="Tahoma" style="font-size: 8.5pt" color="#696969">
+	    Đang online:&nbsp;&nbsp; <span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_Online1_lblOnline">95</span>
+	    </font></b></td>
+    </tr>
+</table>
+						</div>
+						
+						
+						</td>
+					</tr>
+					<tr style ="display : none ;">
+					    <td>
+					        <table cellpadding="0" cellspacing="0" border="0">
+					            <tr height="31px">
+					                <td style="background-image:url(images/left_topic.jpg)" width="30px">
+					                </td>
+					                <td style="background-image:url(images/bg_topic.jpg)" width="187px" valign="middle" align="center" class="menutop">HỖ TRỢ TRỰC TUYẾN
+					                </td>
+					                <td style="background-image:url(images/right_topic.jpg)" width="5px">
+					                </td>
+					            </tr>
+					        </table>
+					    </td>
+					</tr>
+					<tr style ="display : none ;">
+					    <td align="center">
+					        <table cellspacing='5' cellpadding='1'><tr><td></tr></table>
+					    </td>
+					</tr>
+					<tr>
+					    <td align="center">
+					        
+                                <a href='https://play.google.com/store/apps/details?id=vn.psctelecom.uismobie' target="_blank"> 
+                                <img id="ContentPlaceHolder1_ctl00_ctl00_ctl00_rptAdvertise_imgPic_0" title="Ứng dung Uis Mobie Android" src="Uploads/bAndroid_02.png" width="200" /></a><br /><br />
+                            
+                                <a href='https://itunes.apple.com/us/app/uis-mobie/id885416039?l=vi&ls=1&mt=8' target="_blank"> 
+                                <img id="ContentPlaceHolder1_ctl00_ctl00_ctl00_rptAdvertise_imgPic_1" title="Ứng dung Uis Mobie Apple" src="Uploads/biPhone_02.png" width="200" /></a><br /><br />
+                            
+                                <a href='http://www.windowsphone.com/en-us/store/app/uismobie/c8d5eb6c-f58b-4d28-9ec6-04a9d40e6018' target="_blank"> 
+                                <img id="ContentPlaceHolder1_ctl00_ctl00_ctl00_rptAdvertise_imgPic_2" title="Ứng dung Uis Mobie WindowsPhone" src="Uploads/bWinP_02.png" width="200" /></a><br /><br />
+                            
+					    </td>
+					</tr>
+				</table>
+				</td>
+				<td width="10px">&nbsp;</td>
+				<td valign="top" align="left" >
+				    
+<table cellpadding="0"  cellspacing="0px" >
+<tr>
+    <td width="600px" valign="top">
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td width="5px">
+                <img border="0" src="images/left_title.gif" width="5" height="45" />
+                </td>
+                <td background="images/bg_title.gif">
+                    <img border="0" src="images/1262598079_home.png" width="24" height="28" > 
+                    <span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_lblThongbao" class="title">THÔNG BÁO MỚI</span>
+                </td>
+                <td align="right" background="images/bg_title.gif">
+                    <span class="Student_menu_dl">
+    					    Nội dung: <input name="ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$txtSearch" type="text" id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_txtSearch" class="uis_Navigate_marquee_dl" />&nbsp;&nbsp;
+                            <input type="submit" name="ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$btnFind" value="Tìm kiếm" id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_btnFind" />
+				        </span>
+                </td>
+                <td width="5px">
+                    <img border="0" src="images/right_title.gif" width="5" height="45" />
+                </td>
+                
+            </tr>
+        </table>
+        <div>
+	<table cellspacing="0" cellpadding="2" id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup">
+		<tr>
+			<th scope="col"><font color="#333333">&nbsp;</font></th>
+		</tr><tr bgcolor="#FBFDFF">
+			<td><font color="#333333" size="2">
+                <table cellpadding="0"  cellspacing="0px" width="600px">
+                <tr>
+                    <td>
+                    <div align="center">
+                    <table border="0" width="94%" id="table172" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td height="8">
+                            <img border="0" src="images/dot.gif" width="1" height="1" /></td>
+                        </tr>
+                        <tr>
+                            <td height="22" align="left">
+                                <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblMessageSubject_0" title="Messages.aspx?ID=44152" class="titlenews" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup$ctl02$lblMessageSubject&#39;,&#39;&#39;)">Thông báo Thu Học phí, lệ phí khóa 2023 HK01 NH2023-2024</a>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" class="inputdate">[Ngày đăng:<span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblCreationDate_0" class="inputdate">31/03/2023</span>]
+                            </td>
+                        </tr>
+                        <tr >
+                            <td >
+                                <table border="0" width="100%" cellspacing="5" cellpadding="0">
+	                                <tr >
+		                                <td >
+				                            
+			                            </td>
+			                            <td align="left" >
+			                                <span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblMessageNote_0" class="contentnews"><p>&nbsp;Th&ocirc;ng b&aacute;o Thu Học ph&iacute;, lệ ph&iacute; kh&oacute;a 2023 HK01 NH2023-2024</p>
+<p>&nbsp;HSSV xem th&ocirc;ng b&aacute;o <a href="/img/2019/Th%C3%B4ng%20b%C3%A1o%20chung/file/PHONG%20TAI%20CHINH%20KE%20TOAN/Thong%20bao%20hoc%20phi/Nam%20hoc%202023-2024/Thong%20bao%20thu%20Hoc%20phi%20-%20le%20phi%20khoa%202023.pdf">Tại đ&acirc;y</a></p></span>
+			                            </td>
+	                                </tr>
+	                                <tr>
+		                                <td  class="contentnews" colspan="2" align="right">
+			                                <img border="0" src="images/icon-search.gif" width="11" height="11" /> 
+			                                <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lbtDetail_0" class="chitiet" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup$ctl02$lbtDetail&#39;,&#39;&#39;)">Chi tiết</a>
+			                            </td>
+	                                </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                    </td>
+                </tr>
+                
+                </table>
+                </font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="#333333" size="2">
+                <table cellpadding="0"  cellspacing="0px" width="600px">
+                <tr>
+                    <td>
+                    <div align="center">
+                    <table border="0" width="94%" id="table172" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td height="8">
+                            <img border="0" src="images/dot.gif" width="1" height="1" /></td>
+                        </tr>
+                        <tr>
+                            <td height="22" align="left">
+                                <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblMessageSubject_1" title="Messages.aspx?ID=44151" class="titlenews" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup$ctl03$lblMessageSubject&#39;,&#39;&#39;)">Thông báo Thu Học phí HK02 NH 2022-2023</a>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" class="inputdate">[Ngày đăng:<span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblCreationDate_1" class="inputdate">31/03/2023</span>]
+                            </td>
+                        </tr>
+                        <tr >
+                            <td >
+                                <table border="0" width="100%" cellspacing="5" cellpadding="0">
+	                                <tr >
+		                                <td >
+				                            
+			                            </td>
+			                            <td align="left" >
+			                                <span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblMessageNote_1" class="contentnews"><p>&nbsp;Th&ocirc;ng b&aacute;o Thu Học ph&iacute; HK02 NH2022-2023</p>
+<p>&nbsp;HSSV xem th&ocirc;ng b&aacute;o <a href="/img/2019/Th%C3%B4ng%20b%C3%A1o%20chung/file/PHONG%20TAI%20CHINH%20KE%20TOAN/Thong%20bao%20hoc%20phi/Nam%20hoc%202022-2023/HK02%20NH2022-2023/hocphi.pdf">Tại đ&acirc;y</a></p></span>
+			                            </td>
+	                                </tr>
+	                                <tr>
+		                                <td  class="contentnews" colspan="2" align="right">
+			                                <img border="0" src="images/icon-search.gif" width="11" height="11" /> 
+			                                <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lbtDetail_1" class="chitiet" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup$ctl03$lbtDetail&#39;,&#39;&#39;)">Chi tiết</a>
+			                            </td>
+	                                </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                    </td>
+                </tr>
+                
+                </table>
+                </font></td>
+		</tr><tr bgcolor="#FBFDFF">
+			<td><font color="#333333" size="2">
+                <table cellpadding="0"  cellspacing="0px" width="600px">
+                <tr>
+                    <td>
+                    <div align="center">
+                    <table border="0" width="94%" id="table172" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td height="8">
+                            <img border="0" src="images/dot.gif" width="1" height="1" /></td>
+                        </tr>
+                        <tr>
+                            <td height="22" align="left">
+                                <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblMessageSubject_2" title="Messages.aspx?ID=44149" class="titlenews" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup$ctl04$lblMessageSubject&#39;,&#39;&#39;)">Thông báo v/v cập nhật danh sách HSSV đủ điều kiện được đề nghị xét học bổng khuyến khích học tập học kì 2 năm học 2021-2022</a>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" class="inputdate">[Ngày đăng:<span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblCreationDate_2" class="inputdate">29/03/2023</span>]
+                            </td>
+                        </tr>
+                        <tr >
+                            <td >
+                                <table border="0" width="100%" cellspacing="5" cellpadding="0">
+	                                <tr >
+		                                <td >
+				                            
+			                            </td>
+			                            <td align="left" >
+			                                <span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblMessageNote_2" class="contentnews"><p>&nbsp;HSSV xem:&nbsp;</p>
+<p>- Th&ocirc;ng b&aacute;o<a href="/img/2019/H%E1%BB%8Dc%20b%E1%BB%95ng-Khen%20th%C6%B0%E1%BB%9Fng-K%E1%BB%B7%20lu%E1%BA%ADt/file/NH%202022-2023/2_%20TB%20CAP%20NHAT%20DS%20HSSV%20DU%20DIEU%20KIEN%20XET%20HK2%2021-22.PDF"> tại đ&acirc;y.&nbsp;</a></p>
+<p>- Danh s&aacute;ch: <a href="/img/2019/H%E1%BB%8Dc%20b%E1%BB%95ng-Khen%20th%C6%B0%E1%BB%9Fng-K%E1%BB%B7%20lu%E1%BA%ADt/file/NH%202022-2023/CD19DC2%20(DUC)%20-%20DS%20XET%20HB%20HK2%20NH%2021-22.xls">CD19</a>, <a href="/img/2019/H%E1%BB%8Dc%20b%E1%BB%95ng-Khen%20th%C6%B0%E1%BB%9Fng-K%E1%BB%B7%20lu%E1%BA%ADt/file/NH%202022-2023/CD20%20-%20DS%20XET%20HB%20HK2%20NH%2021-22.xls">CD20</a>, <a href="/img/2019/H%E1%BB%8Dc%20b%E1%BB%95ng-Khen%20th%C6%B0%E1%BB%9Fng-K%E1%BB%B7%20lu%E1%BA%ADt/file/NH%202022-2023/CD21%20-%20DS%20XET%20HB%20HK2%20NH%2021-22.xls">CD21</a>, <a href="/img/2019/H%E1%BB%8Dc%20b%E1%BB%95ng-Khen%20th%C6%B0%E1%BB%9Fng-K%E1%BB%B7%20lu%E1%BA%ADt/file/NH%202022-2023/TC%20-%20DS%20XET%20HB%20HK2%20NH%2021-22.xls">TC</a></p></span>
+			                            </td>
+	                                </tr>
+	                                <tr>
+		                                <td  class="contentnews" colspan="2" align="right">
+			                                <img border="0" src="images/icon-search.gif" width="11" height="11" /> 
+			                                <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lbtDetail_2" class="chitiet" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup$ctl04$lbtDetail&#39;,&#39;&#39;)">Chi tiết</a>
+			                            </td>
+	                                </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                    </td>
+                </tr>
+                
+                </table>
+                </font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="#333333" size="2">
+                <table cellpadding="0"  cellspacing="0px" width="600px">
+                <tr>
+                    <td>
+                    <div align="center">
+                    <table border="0" width="94%" id="table172" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td height="8">
+                            <img border="0" src="images/dot.gif" width="1" height="1" /></td>
+                        </tr>
+                        <tr>
+                            <td height="22" align="left">
+                                <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblMessageSubject_3" title="Messages.aspx?ID=44148" class="titlenews" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup$ctl05$lblMessageSubject&#39;,&#39;&#39;)">Thông báo về thời gian nghỉ lễ Giỗ tổ Hùng Vương và Lễ 30/04-01/05 năm 2023</a>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" class="inputdate">[Ngày đăng:<span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblCreationDate_3" class="inputdate">24/03/2023</span>]
+                            </td>
+                        </tr>
+                        <tr >
+                            <td >
+                                <table border="0" width="100%" cellspacing="5" cellpadding="0">
+	                                <tr >
+		                                <td >
+				                            
+			                            </td>
+			                            <td align="left" >
+			                                <span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblMessageNote_3" class="contentnews"><p>&nbsp;HSSV xem tại<a href="http://pcthssv.tdc.edu.vn/?p=6937"> đ&acirc;y.</a></p></span>
+			                            </td>
+	                                </tr>
+	                                <tr>
+		                                <td  class="contentnews" colspan="2" align="right">
+			                                <img border="0" src="images/icon-search.gif" width="11" height="11" /> 
+			                                <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lbtDetail_3" class="chitiet" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup$ctl05$lbtDetail&#39;,&#39;&#39;)">Chi tiết</a>
+			                            </td>
+	                                </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                    </td>
+                </tr>
+                
+                </table>
+                </font></td>
+		</tr><tr bgcolor="#FBFDFF">
+			<td><font color="#333333" size="2">
+                <table cellpadding="0"  cellspacing="0px" width="600px">
+                <tr>
+                    <td>
+                    <div align="center">
+                    <table border="0" width="94%" id="table172" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td height="8">
+                            <img border="0" src="images/dot.gif" width="1" height="1" /></td>
+                        </tr>
+                        <tr>
+                            <td height="22" align="left">
+                                <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblMessageSubject_4" title="Messages.aspx?ID=44147" class="titlenews" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup$ctl06$lblMessageSubject&#39;,&#39;&#39;)">Thông Báo Bảng Điểm Thi HK1 NH 2022-2023 (Đợt : Trả điểm I)</a>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" class="inputdate">[Ngày đăng:<span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblCreationDate_4" class="inputdate">16/03/2023</span>]
+                            </td>
+                        </tr>
+                        <tr >
+                            <td >
+                                <table border="0" width="100%" cellspacing="5" cellpadding="0">
+	                                <tr >
+		                                <td >
+				                            
+			                            </td>
+			                            <td align="left" >
+			                                <span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblMessageNote_4" class="contentnews"><p>Th&ocirc;ng B&aacute;o Bảng Điểm Thi HK1 NH 2022-2023 (Đợt : Trả điểm I)&nbsp;&nbsp;<em><a href="/img/2019/Th%C3%B4ng%20b%C3%A1o%20chung/file/PHONG%20QLDT/Thong%20Bao/Nam%202023/SO%2045_THONG%20BAO%20BANG%20DIEM%20THI%20%20(DOT%20_TRA%20DIEM%20I%20)%20HK1%20NH%202022-2023(1).pdf">Chi tiết</a></em></p></span>
+			                            </td>
+	                                </tr>
+	                                <tr>
+		                                <td  class="contentnews" colspan="2" align="right">
+			                                <img border="0" src="images/icon-search.gif" width="11" height="11" /> 
+			                                <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lbtDetail_4" class="chitiet" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup$ctl06$lbtDetail&#39;,&#39;&#39;)">Chi tiết</a>
+			                            </td>
+	                                </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                    </td>
+                </tr>
+                
+                </table>
+                </font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="#333333" size="2">
+                <table cellpadding="0"  cellspacing="0px" width="600px">
+                <tr>
+                    <td>
+                    <div align="center">
+                    <table border="0" width="94%" id="table172" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td height="8">
+                            <img border="0" src="images/dot.gif" width="1" height="1" /></td>
+                        </tr>
+                        <tr>
+                            <td height="22" align="left">
+                                <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblMessageSubject_5" title="Messages.aspx?ID=44146" class="titlenews" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup$ctl07$lblMessageSubject&#39;,&#39;&#39;)">Thông Báo Kết Quả Thi Tốt Nghiệp Các Học Phần Văn Hóa Khóa Thi Ngày 06_07/03/2023 (Trung Cấp)</a>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" class="inputdate">[Ngày đăng:<span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblCreationDate_5" class="inputdate">16/03/2023</span>]
+                            </td>
+                        </tr>
+                        <tr >
+                            <td >
+                                <table border="0" width="100%" cellspacing="5" cellpadding="0">
+	                                <tr >
+		                                <td >
+				                            
+			                            </td>
+			                            <td align="left" >
+			                                <span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblMessageNote_5" class="contentnews"><p>&nbsp; Th&ocirc;ng B&aacute;o Kết Quả Thi Tốt Nghiệp C&aacute;c Học Phần Văn H&oacute;a Kh&oacute;a Thi Ng&agrave;y 06_07/03/2023&nbsp;(Trung Cấp)</p>
+<p>&nbsp;- M&ocirc;n :&nbsp;</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; + To&aacute;n (P_01):&nbsp;<a href="/img/2019/Th%C3%B4ng%20tin%20t%E1%BB%91t%20nghi%E1%BB%87p/file/Dien%20Thi%20TN/Thang%2003_2023/Toan_P_01.pdf">Chi tiết</a></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; + L&yacute; (P_02):&nbsp;<a href="/img/2019/Th%C3%B4ng%20tin%20t%E1%BB%91t%20nghi%E1%BB%87p/file/Dien%20Thi%20TN/Thang%2003_2023/Ly_P_02.pdf">Chi tiết</a></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; + H&oacute;a (P_03):&nbsp;<a href="/img/2019/Th%C3%B4ng%20tin%20t%E1%BB%91t%20nghi%E1%BB%87p/file/Dien%20Thi%20TN/Thang%2003_2023/Hoa_P_03.pdf">Chi tiết</a></p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; + Lịch Sử (P_04):&nbsp;<a href="/img/2019/Th%C3%B4ng%20tin%20t%E1%BB%91t%20nghi%E1%BB%87p/file/Dien%20Thi%20TN/Thang%2003_2023/Lich%20Su_P_04.pdf">Chi tiết</a></p>
+<p>- Ch&uacute; &yacute; :&nbsp; Ph&ograve;ng Quản L&yacute; Đ&agrave;o Tạo Th&ocirc;ng b&aacute;o nhận đơn ph&uacute;c khảo b&agrave;i thi từ ng&agrave;y 18/03-21/03/2022. Nếu học sinh sinh vi&ecirc;n c&oacute; nhu cầu ph&uacute;c khảo b&agrave;i thi vui l&ograve;ng xin li&ecirc;n hệ Ph&ograve;ng QLĐT (D00-04).</p>
+<p></p></span>
+			                            </td>
+	                                </tr>
+	                                <tr>
+		                                <td  class="contentnews" colspan="2" align="right">
+			                                <img border="0" src="images/icon-search.gif" width="11" height="11" /> 
+			                                <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lbtDetail_5" class="chitiet" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup$ctl07$lbtDetail&#39;,&#39;&#39;)">Chi tiết</a>
+			                            </td>
+	                                </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                    </td>
+                </tr>
+                
+                </table>
+                </font></td>
+		</tr><tr bgcolor="#FBFDFF">
+			<td><font color="#333333" size="2">
+                <table cellpadding="0"  cellspacing="0px" width="600px">
+                <tr>
+                    <td>
+                    <div align="center">
+                    <table border="0" width="94%" id="table172" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td height="8">
+                            <img border="0" src="images/dot.gif" width="1" height="1" /></td>
+                        </tr>
+                        <tr>
+                            <td height="22" align="left">
+                                <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblMessageSubject_6" title="Messages.aspx?ID=44145" class="titlenews" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup$ctl08$lblMessageSubject&#39;,&#39;&#39;)">Thông báo v/v nộp hồ sơ miễn, giảm học phí học kỳ 2 năm học 2022-2023</a>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" class="inputdate">[Ngày đăng:<span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblCreationDate_6" class="inputdate">15/03/2023</span>]
+                            </td>
+                        </tr>
+                        <tr >
+                            <td >
+                                <table border="0" width="100%" cellspacing="5" cellpadding="0">
+	                                <tr >
+		                                <td >
+				                            
+			                            </td>
+			                            <td align="left" >
+			                                <span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblMessageNote_6" class="contentnews"><p>&nbsp;HSSV xem <a href="http://pcthssv.tdc.edu.vn/?p=6929">tại đ&acirc;y.</a></p></span>
+			                            </td>
+	                                </tr>
+	                                <tr>
+		                                <td  class="contentnews" colspan="2" align="right">
+			                                <img border="0" src="images/icon-search.gif" width="11" height="11" /> 
+			                                <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lbtDetail_6" class="chitiet" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup$ctl08$lbtDetail&#39;,&#39;&#39;)">Chi tiết</a>
+			                            </td>
+	                                </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                    </td>
+                </tr>
+                
+                </table>
+                </font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="#333333" size="2">
+                <table cellpadding="0"  cellspacing="0px" width="600px">
+                <tr>
+                    <td>
+                    <div align="center">
+                    <table border="0" width="94%" id="table172" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td height="8">
+                            <img border="0" src="images/dot.gif" width="1" height="1" /></td>
+                        </tr>
+                        <tr>
+                            <td height="22" align="left">
+                                <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblMessageSubject_7" title="Messages.aspx?ID=44144" class="titlenews" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup$ctl09$lblMessageSubject&#39;,&#39;&#39;)">Thông báo v/v công bố danh sách HSSV đủ điều kiện được đề nghị xét học bổng khuyến khích học tập học kì 2 năm học 2021-2022</a>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" class="inputdate">[Ngày đăng:<span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblCreationDate_7" class="inputdate">15/03/2023</span>]
+                            </td>
+                        </tr>
+                        <tr >
+                            <td >
+                                <table border="0" width="100%" cellspacing="5" cellpadding="0">
+	                                <tr >
+		                                <td >
+				                            
+			                            </td>
+			                            <td align="left" >
+			                                <span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblMessageNote_7" class="contentnews"><p>&nbsp;HSSV xem:&nbsp;</p>
+<p>- Th&ocirc;ng b&aacute;o<a href="/img/2019/Th%C3%B4ng%20b%C3%A1o%20chung/file/PHONG%20CTCT-HSSV/NH%202022-2023/H%E1%BB%8CC%20BONG%20KKHT/1_TB%20DS%20DU%20DIEU%20KIEN%20XET%20HBKKHT%20HK2%20NH%2021-22.PDF"> tại đ&acirc;y.&nbsp;</a></p>
+<p>- Danh s&aacute;ch:&nbsp;</p>
+<p>+ Bậc Cao đẳng: <a href="/img/2019/Th%C3%B4ng%20b%C3%A1o%20chung/file/PHONG%20CTCT-HSSV/NH%202022-2023/H%E1%BB%8CC%20BONG%20KKHT/CD19DC2%20(DUC)%20-%20DS%20XET%20HB%20HK2%20NH%2021-22.xls">Kh&oacute;a 2019</a>,&nbsp;<a href="/img/2019/Th%C3%B4ng%20b%C3%A1o%20chung/file/PHONG%20CTCT-HSSV/NH%202022-2023/H%E1%BB%8CC%20BONG%20KKHT/CD20%20-%20DS%20XET%20HB%20HK2%20NH%2021-22.xls">Kh&oacute;a 2020</a>, <a href="/img/2019/Th%C3%B4ng%20b%C3%A1o%20chung/file/PHONG%20CTCT-HSSV/NH%202022-2023/H%E1%BB%8CC%20BONG%20KKHT/CD21%20-%20DS%20XET%20HB%20HK2%20NH%2021-22.xls">Kh&oacute;a 2021.</a></p>
+<p>+ Bậc Trung cấp: <a href="/img/2019/Th%C3%B4ng%20b%C3%A1o%20chung/file/PHONG%20CTCT-HSSV/NH%202022-2023/H%E1%BB%8CC%20BONG%20KKHT/TC%20-%20DS%20XET%20HB%20HK2%20NH%2021-22.xls">Kh&oacute;a 2020, Kh&oacute;a 2021</a></p></span>
+			                            </td>
+	                                </tr>
+	                                <tr>
+		                                <td  class="contentnews" colspan="2" align="right">
+			                                <img border="0" src="images/icon-search.gif" width="11" height="11" /> 
+			                                <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lbtDetail_7" class="chitiet" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup$ctl09$lbtDetail&#39;,&#39;&#39;)">Chi tiết</a>
+			                            </td>
+	                                </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                    </td>
+                </tr>
+                
+                </table>
+                </font></td>
+		</tr><tr bgcolor="#FBFDFF">
+			<td><font color="#333333" size="2">
+                <table cellpadding="0"  cellspacing="0px" width="600px">
+                <tr>
+                    <td>
+                    <div align="center">
+                    <table border="0" width="94%" id="table172" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td height="8">
+                            <img border="0" src="images/dot.gif" width="1" height="1" /></td>
+                        </tr>
+                        <tr>
+                            <td height="22" align="left">
+                                <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblMessageSubject_8" title="Messages.aspx?ID=44142" class="titlenews" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup$ctl10$lblMessageSubject&#39;,&#39;&#39;)">Quyết định v/v công nhận kết quả rèn luyện sinh viên bậc Cao đẳng (bổ sung) Học kỳ 2 năm học 2021-2022</a>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" class="inputdate">[Ngày đăng:<span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblCreationDate_8" class="inputdate">03/03/2023</span>]
+                            </td>
+                        </tr>
+                        <tr >
+                            <td >
+                                <table border="0" width="100%" cellspacing="5" cellpadding="0">
+	                                <tr >
+		                                <td >
+				                            
+			                            </td>
+			                            <td align="left" >
+			                                <span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblMessageNote_8" class="contentnews"><p>&nbsp;HSSV xem <a href="http://pcthssv.tdc.edu.vn/?p=6881">tại đ&acirc;y.</a></p></span>
+			                            </td>
+	                                </tr>
+	                                <tr>
+		                                <td  class="contentnews" colspan="2" align="right">
+			                                <img border="0" src="images/icon-search.gif" width="11" height="11" /> 
+			                                <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lbtDetail_8" class="chitiet" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup$ctl10$lbtDetail&#39;,&#39;&#39;)">Chi tiết</a>
+			                            </td>
+	                                </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                    </td>
+                </tr>
+                
+                </table>
+                </font></td>
+		</tr><tr bgcolor="White">
+			<td><font color="#333333" size="2">
+                <table cellpadding="0"  cellspacing="0px" width="600px">
+                <tr>
+                    <td>
+                    <div align="center">
+                    <table border="0" width="94%" id="table172" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td height="8">
+                            <img border="0" src="images/dot.gif" width="1" height="1" /></td>
+                        </tr>
+                        <tr>
+                            <td height="22" align="left">
+                                <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblMessageSubject_9" title="Messages.aspx?ID=44141" class="titlenews" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup$ctl11$lblMessageSubject&#39;,&#39;&#39;)">Thông Báo Kết Quả Chấm Phúc Khảo Bài Thi HK1 NH 2022-2023 (Đợt_2)</a>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left" class="inputdate">[Ngày đăng:<span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblCreationDate_9" class="inputdate">03/03/2023</span>]
+                            </td>
+                        </tr>
+                        <tr >
+                            <td >
+                                <table border="0" width="100%" cellspacing="5" cellpadding="0">
+	                                <tr >
+		                                <td >
+				                            
+			                            </td>
+			                            <td align="left" >
+			                                <span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lblMessageNote_9" class="contentnews"><p>&nbsp;Th&ocirc;ng B&aacute;o Kết Quả Chấm Ph&uacute;c Khảo B&agrave;i Thi HK1 NH 2022-2023 (Đợt_2)&nbsp;<em><a href="/img/2019/Th%C3%B4ng%20b%C3%A1o%20chung/file/PHONG%20QLDT/Thong%20Bao/Nam%202023/So%2028_PHUC%20KHAO%20BAI%20THI%20HK1%20NH%202022-2023.pdf">Chi tiết</a></em></p></span>
+			                            </td>
+	                                </tr>
+	                                <tr>
+		                                <td  class="contentnews" colspan="2" align="right">
+			                                <img border="0" src="images/icon-search.gif" width="11" height="11" /> 
+			                                <a id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_grvNewsgroup_lbtDetail_9" class="chitiet" href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup$ctl11$lbtDetail&#39;,&#39;&#39;)">Chi tiết</a>
+			                            </td>
+	                                </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                    </td>
+                </tr>
+                
+                </table>
+                </font></td>
+		</tr><tr class="num" align="right" bgcolor="#EDF2F5">
+			<td><font color="#333333"><table>
+				<tr>
+					<td><font color="#333333"><span>1</span></font></td><td><font color="#333333"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup&#39;,&#39;Page$2&#39;)"><font color="#333333">2</font></a></font></td><td><font color="#333333"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup&#39;,&#39;Page$3&#39;)"><font color="#333333">3</font></a></font></td><td><font color="#333333"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup&#39;,&#39;Page$4&#39;)"><font color="#333333">4</font></a></font></td><td><font color="#333333"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup&#39;,&#39;Page$5&#39;)"><font color="#333333">5</font></a></font></td><td><font color="#333333"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup&#39;,&#39;Page$6&#39;)"><font color="#333333">6</font></a></font></td><td><font color="#333333"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup&#39;,&#39;Page$7&#39;)"><font color="#333333">7</font></a></font></td><td><font color="#333333"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup&#39;,&#39;Page$8&#39;)"><font color="#333333">8</font></a></font></td><td><font color="#333333"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup&#39;,&#39;Page$9&#39;)"><font color="#333333">9</font></a></font></td><td><font color="#333333"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup&#39;,&#39;Page$10&#39;)"><font color="#333333">10</font></a></font></td><td><font color="#333333"><a href="javascript:__doPostBack(&#39;ctl00$ContentPlaceHolder1$ctl00$ctl00$ctl00$ctl00$grvNewsgroup&#39;,&#39;Page$11&#39;)"><font color="#333333">...</font></a></font></td>
+				</tr>
+			</table></font></td>
+		</tr>
+	</table>
+</div>
+    </td>
+    <td width="10">&nbsp;</td>
+    <td width="170px" valign="top" align="center">
+    <table cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td width="5px">
+            <img border="0" src="images/left_title.gif" width="5" height="45">
+            </td>
+            <td background="images/bg_title.gif" align="center">
+                <span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_Label2" class="title" style="display:inline-block;">THÔNG BÁO CHUNG</span>
+            </td>
+            <td width="5px">
+                <img border="0" src="images/right_title.gif" width="5" height="45" />
+            </td>
+        </tr>
+        </table><br />
+        <table cellpadding="5" cellspacing="5" width="100%" bgcolor="#e3ebef">
+            <tr>
+                <td align="center" class="uis_Navigate_marquee_dl">
+                    <marquee scrolldelay="6" scrollamount="2" id='banner' onmouseover="this.stop()" onmouseout="this.start()" direction="up">
+                    <table id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_dtlNewhot" cellspacing="0">
+	<tr>
+		<td>
+                            <img  src="images/bd_nextpage.png" width="5" />
+                            <a href="Messages.aspx?id=44152" >Thông báo Thu Học phí, lệ phí khóa 2023 HK01 NH2023-2024</a><br /><br />
+                        </td>
+	</tr><tr>
+		<td>
+                            <img  src="images/bd_nextpage.png" width="5" />
+                            <a href="Messages.aspx?id=44151" >Thông báo Thu Học phí HK02 NH 2022-2023</a><br /><br />
+                        </td>
+	</tr><tr>
+		<td>
+                            <img  src="images/bd_nextpage.png" width="5" />
+                            <a href="Messages.aspx?id=44150" >Hướng dẫn đăng ký ứng dụng VssID để sử dụng Bảo hiểm y tế</a><br /><br />
+                        </td>
+	</tr><tr>
+		<td>
+                            <img  src="images/bd_nextpage.png" width="5" />
+                            <a href="Messages.aspx?id=44149" >Thông báo v/v cập nhật danh sách HSSV đủ điều kiện được đề nghị xét học bổng khuyến khích học tập học kì 2 năm học 2021-2022</a><br /><br />
+                        </td>
+	</tr><tr>
+		<td>
+                            <img  src="images/bd_nextpage.png" width="5" />
+                            <a href="Messages.aspx?id=44148" >Thông báo về thời gian nghỉ lễ Giỗ tổ Hùng Vương và Lễ 30/04-01/05 năm 2023</a><br /><br />
+                        </td>
+	</tr><tr>
+		<td>
+                            <img  src="images/bd_nextpage.png" width="5" />
+                            <a href="Messages.aspx?id=44145" >Thông báo v/v nộp hồ sơ miễn, giảm học phí học kỳ 2 năm học 2022-2023</a><br /><br />
+                        </td>
+	</tr><tr>
+		<td>
+                            <img  src="images/bd_nextpage.png" width="5" />
+                            <a href="Messages.aspx?id=44144" >Thông báo v/v công bố danh sách HSSV đủ điều kiện được đề nghị xét học bổng khuyến khích học tập học kì 2 năm học 2021-2022</a><br /><br />
+                        </td>
+	</tr><tr>
+		<td>
+                            <img  src="images/bd_nextpage.png" width="5" />
+                            <a href="Messages.aspx?id=44143" >Danh sách hoàn trả tiền Bảo hiểm y tế năm học 2022-2023</a><br /><br />
+                        </td>
+	</tr><tr>
+		<td>
+                            <img  src="images/bd_nextpage.png" width="5" />
+                            <a href="Messages.aspx?id=44142" >Quyết định v/v công nhận kết quả rèn luyện sinh viên bậc Cao đẳng (bổ sung) Học kỳ 2 năm học 2021-2022</a><br /><br />
+                        </td>
+	</tr><tr>
+		<td>
+                            <img  src="images/bd_nextpage.png" width="5" />
+                            <a href="Messages.aspx?id=44140" >Thông báo v/v nộp hồ sơ xét học bổng vượt khó, năm học 2022-2023 (đợt 2)</a><br /><br />
+                        </td>
+	</tr>
+</table></marquee>
+                </td>
+            </tr>
+        </table><br />
+        <table cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td width="5px">
+            <img border="0" src="images/left_title.gif" width="5" height="45">
+            </td>
+            <td background="images/bg_title.gif" align="center">
+                <span id="ContentPlaceHolder1_ctl00_ctl00_ctl00_ctl00_Label1" class="title">TRANG LIÊN KẾT</span>
+            </td>
+            <td width="5px">
+                <img border="0" src="images/right_title.gif" width="5" height="45" />
+            </td>
+        </tr>
+        </table><br />
+        <table cellpadding="0" cellspacing="0" width="100%" bgcolor="#e3ebef">
+            <tr>
+                <td align="center">
+                    
+
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+</table>
+
+		         </td>
+	        </tr>
+        </table>
+		</td>
+	</tr>
+	<tr>
+		<td height="3">
+		<img border="0" src="images/dot.gif" width="1" height="1"/></td>
+	</tr>
+	<tr>
+		<td>
+		<img border="0" src="images/line_ngang.gif" width="982" height="14"/></td>
+	</tr>
+</table>
+
+
+
+
+
+					</td>
+					<td width="10">&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="10">&nbsp;</td>
+					<td height="35">
+					<table border='0' width='100%' id='table183' cellpadding='2'><tr><td><font face='Arial' style='font-size: 8.5pt' color='#737373'><span id='ctl00_Copyright'>Copyright © 2011 TDC - All Rights Reserved</span></font></td><td><p align='right'><font face='Arial' style='font-size: 8.5pt'><span id='ctl00_Label1'><font color='#737373'>Powered and Designed by </font><a target='_blank' href='http://www.psctelecom.com.vn'><font color='#737373'>PSC Vi&#7879;t Nam</font></a></span></font></td></tr></table>
+					</td>
+					<td width="10">&nbsp;</td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+
+	</form>
+</div>
+    
+</body>
+</html>

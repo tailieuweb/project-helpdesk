@@ -50,6 +50,10 @@ View::composer([
             "url" => URL::route('posts.list', []),
             'icon' => '<i class="fa fa-list-ul" aria-hidden="true"></i>'
         ],
+        trans('post-admin.sidebar.crawl') => [
+            "url" => URL::route('posts.crawl', []),
+            'icon' => '<i class="fa fa-list-ul" aria-hidden="true"></i>'
+        ],
         trans('post-admin.sidebar.category') => [
             'url' => URL::route('categories.list', ['_key=' . $key]),
             'icon' => '<i class="fa fa-sitemap" aria-hidden="true"></i>'

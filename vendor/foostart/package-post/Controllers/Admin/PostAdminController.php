@@ -111,6 +111,7 @@ class PostAdminController extends FooController
             return redirect()->route('posts.list', ['user_id' => $user['user_id']]);
 
         }
+        $params['is_admin'] = $is_admin;
 
         $items = $this->obj_item->selectItems($params);
 
@@ -125,6 +126,48 @@ class PostAdminController extends FooController
         ));
 
         return view($this->page_views['admin']['items'], $this->data_view);
+    }
+
+
+    public function crawl(Request $request)
+    {
+        $url = 'http://online.tdc.edu.vn';
+        $content = file_get_contents($url);
+
+        $file_name = __DIR__ . '/online.html';
+        file_put_contents($file_name, $content);
+
+        $patterns = [
+            'title' => '/class="titlenews".*?>(.*)<\/a>/',
+            'date' => '/lblCreationDate.*?class="inputdate">(.*?)<\/span>/',
+            'detail' => '/lblMessageNote.*?class="contentnews"><p>(.*?)<\/p>/',
+            'url_file' => '/lblMessageNote.*?class="contentnews"><p>(.*?)<\/p>/'
+        ];
+
+        // Get list of news title
+        preg_match_all($patterns['title'], $content, $titles);
+        // Get list of news date
+        preg_match_all($patterns['date'], $content, $date);
+        // Get list of news detail
+        preg_match_all($patterns['detail'], $content, $detail);
+        // Get list of news file
+        preg_match_all($patterns['url_file'], $content, $url_file);
+
+        if (!empty($titles[1])) {
+            foreach ($titles[1] as $key => $value) {
+                // Set data input
+                $input = [
+                    'post_name' => $value,
+                    'post_slug' => $date[1][$key],
+                    'post_description' => $detail[1][$key],
+                    'post_overview' => $detail[1][$key]
+                ];
+                // Insert
+                $this->obj_item->insertItem($input);
+
+            }
+        }
+        return redirect()->route('posts.list');
     }
 
     /**
@@ -170,6 +213,7 @@ class PostAdminController extends FooController
         $this->data_view = array_merge($this->data_view, array(
             'item' => $item,
             'request' => $request,
+            'user_id' => $user['user_id'],
         ));
         return view($this->page_views['admin']['edit'], $this->data_view);
     }
@@ -184,7 +228,7 @@ class PostAdminController extends FooController
 
         $item = NULL;
 
-        $params = array_merge($request->all(), $this->getUser());
+        $params = array_merge($this->getUser(), $request->all());
 
         $is_valid_request = $this->isValidRequest($request);
 
@@ -324,11 +368,12 @@ class PostAdminController extends FooController
         }
 
         $backups = array_reverse(glob($config_bakup . '/*'));
-
+        $user = $this->getUser();
         $this->data_view = array_merge($this->data_view, array(
             'request' => $request,
             'content' => $content,
             'backups' => $backups,
+            'user_id' => $user['user_id'],
         ));
 
         return view($this->page_views['admin']['config'], $this->data_view);
@@ -365,7 +410,7 @@ class PostAdminController extends FooController
             }
         }
 
-
+        $user = $this->getUser();
         $lang_bakup = realpath($package_path . '/storage/backup/lang');
         $lang = $request->get('lang') ? $request->get('lang') : 'en';
         $lang_contents = [];
@@ -418,6 +463,7 @@ class PostAdminController extends FooController
             'langs' => $langs,
             'lang_contents' => $lang_contents,
             'lang' => $lang,
+            'user_id' => $user['user_id'],
         ));
 
         return view($this->page_views['admin']['lang'], $this->data_view);
@@ -456,12 +502,13 @@ class PostAdminController extends FooController
             $item->id = NULL;
         }
 
-
+        $user = $this->getUser();
         // display view
         $this->data_view = array_merge($this->data_view, array(
             'item' => $item,
             'request' => $request,
             'context' => $context,
+            'user_id' => $user['user_id'],
         ));
 
         return view($this->page_views['admin']['edit'], $this->data_view);

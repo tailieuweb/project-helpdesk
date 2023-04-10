@@ -10,7 +10,9 @@
 
     <!--BUTTONS-->
         <div class="form-group">
-            <a href="{!! URL::route('posts.list', ['context' => @$params['context']]) !!}"
+            <a href="{!! URL::route('posts.list', ['context' => @$params['context'],
+                                                    'user_id' => $user_id
+                                                    ]) !!}"
                class="btn btn-default search-reset">
                 {!! trans($plang_admin.'.buttons.reset') !!}
             </a>
@@ -47,7 +49,6 @@
             {!! Form::hidden('context',@$request->get('context',null)) !!}
             {!! csrf_field() !!}
         </div>
-
         {!! Form::close() !!}
     </div>
 </div>

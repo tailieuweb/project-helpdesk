@@ -42,6 +42,14 @@ Route::group(['middleware' => ['web']], function () {
         ]);
 
         /**
+         * Crawl news
+         */
+        Route::get('admin/posts/crawl', [
+            'as' => 'posts.crawl',
+            'uses' => 'PostAdminController@crawl'
+        ]);
+
+        /**
          * edit-add
          */
         Route::get('admin/posts/edit', [

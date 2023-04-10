@@ -30,6 +30,7 @@ return [
         'config' => 'Configurations',
         'lang' => 'Languages',
         'category' => 'Categories',
+        'crawl' => 'Crawl news',
     ],
 
 
@@ -58,13 +59,13 @@ return [
     |
     */
     'pages' => [
-        'title-list' => 'List of posts',
+        'title-list' => 'Danh sách bài viết',
         'title-list-search' => 'Search results',
-        'title-edit' => 'Edit post',
-        'title-add' => 'Add new post',
-        'title-delete' => 'Delete post',
-        'title-config' => 'Current configurations',
-        'title-lang' => 'Manage list of languages',
+        'title-edit' => 'Chỉnh sửa bài viết',
+        'title-add' => 'Thêm mới',
+        'title-delete' => 'Xóa bài viết',
+        'title-config' => 'Quản lý cấu hình',
+        'title-lang' => 'Quản lý ngôn ngữ',
     ],
 
 
@@ -76,13 +77,13 @@ return [
     |
     */
     'buttons' => [
-        'search' => 'Search',
+        'search' => 'Tìm kiếm',
         'reset' => 'Resest',
-        'add' => 'Add',
-        'save' => 'Save',
-        'delete' => 'Delete',
-        'delete-in-trash' => 'In trash',
-        'delete-forever' => 'Forever',
+        'add' => 'Thêm mới',
+        'save' => 'Lưu',
+        'delete' => 'Xóa',
+        'delete-in-trash' => 'Xóa tạm thời',
+        'delete-forever' => 'Xóa vĩnh viễn',
     ],
 
 
@@ -94,8 +95,8 @@ return [
     |
     */
     'hint' => [
-        'delete-forever' => 'Delete forever',
-        'delete-in-trash' => 'Delete in trash',
+        'delete-forever' => 'Xóa vĩnh viễn',
+        'delete-in-trash' => 'Xóa tạm thời',
     ],
 
 
@@ -108,10 +109,10 @@ return [
     |
     */
     'form' => [
-        'keyword' => 'Keyword',
-        'sorting' => 'Sorting',
+        'keyword' => 'Từ khóa',
+        'sorting' => 'Sắp xếp',
         'no-selected' => 'No selected',
-        'status' => 'Status',
+        'status' => 'Trạng thái',
     ],
 
 

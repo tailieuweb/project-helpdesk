@@ -60,22 +60,22 @@ return [
         ],
 
 
-        //Groups page
-        [
-            "name" => "acl-admin.menu.groups",
-            "route" => "groups",
-            "link" => '/admin/groups',
-            "permissions" => [$admin, "_group-editor"]
-        ],
-
-
-        //Permissions page
-        [
-            "name" => "acl-admin.menu.permissions",
-            "route" => "permissions",
-            "link" => '/admin/permissions',
-            "permissions" => [$admin, "_permission-editor"]
-        ],
+//        //Groups page
+//        [
+//            "name" => "acl-admin.menu.groups",
+//            "route" => "groups",
+//            "link" => '/admin/groups',
+//            "permissions" => [$admin, "_group-editor"]
+//        ],
+//
+//
+//        //Permissions page
+//        [
+//            "name" => "acl-admin.menu.permissions",
+//            "route" => "permissions",
+//            "link" => '/admin/permissions',
+//            "permissions" => [$admin, "_permission-editor"]
+//        ],
 
         //Contexts
         [
@@ -97,6 +97,13 @@ return [
             "name" => "acl-admin.menu.pexcel",
             "route" => "pexcel",
             "link" => '/admin/pexcel',
+            "permissions" => [$admin, "_permission-editor"]
+        ],
+        //Posts
+        [
+            "name" => "acl-admin.menu.posts",
+            "route" => "post",
+            "link" => '/admin/posts',
             "permissions" => [$admin, "_permission-editor"]
         ],
 
